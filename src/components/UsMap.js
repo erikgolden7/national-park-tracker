@@ -14,7 +14,7 @@ class UsMap extends Component {
   render() {
     return (
       <div className="App">
-        <USAMap height={500} onClick={this.mapHandler} />
+        <USAMap width={600} height={500} onClick={this.mapHandler} />
       </div>
     );
   }

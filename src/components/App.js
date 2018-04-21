@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
-import logo from '../assets/natParkIcon.png'
 import '../App.css'
-import NatParkList from './NatParkList'
-import UsMap from './UsMap'
+import ParkInfo from './ParkInfo/ParkInfo'
+import HomePage from './HomePage/HomePage'
+import ParkSearch from './ParkSearch/ParkSearch'
+import Badges from './Badges/Badges'
+import About from './About/About'
+import Nav from './Nav/Nav'
+import {Switch, Route} from 'react-router-dom'
 
 class App extends Component {
   constructor (props) {
@@ -22,11 +26,15 @@ class App extends Component {
   render () {
     return (
       <div className='App'>
-        <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-        </header>
-        <UsMap setParks={this.stateParks} />
-        <NatParkList parkList={this.state.parks} />
+       
+      <Nav/>
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/info' component={ParkInfo} />
+          <Route path='/search' component={ParkSearch} />
+          <Route path='/badges' component={Badges} />
+          <Route path='/about' component={About} />
+        </Switch>
       </div>
     )
   }

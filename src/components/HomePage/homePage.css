@@ -1,0 +1,6 @@
+.park-img {
+  background: url('../../assets/weAreParks.jpg') center center no-repeat;
+  background-size: contain;
+  width: auto;
+  height: 600px;
+}
