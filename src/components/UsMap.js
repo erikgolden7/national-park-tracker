@@ -14,11 +14,11 @@ class UsMap extends Component {
 
   render() {
     return (
-      <div >
-      <div className="image">
-      <USAMap className="map" defaultFill="white" width={800} height={600} onClick={this.mapHandler} />
-      </div>
-        
+      <div>
+        <div className="image">
+          <USAMap className="map" defaultFill="white" width={800} height={600} 
+          onClick={(e) => {this.mapHandler(e) ; this.props.listSelect() ; this.props.select() }} />
+        </div>
       </div>
     );
   }
