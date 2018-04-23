@@ -1,0 +1,14 @@
+.park-list {
+  width: 100%;
+  height: auto;
+}
+
+.park-list-item {
+  border: solid gray 1px;
+  padding: 3px 25px;
+}
+
+.park-list-item:hover {
+  cursor: pointer;
+  background-color: rgba(165, 165, 165, 0.447);
+}

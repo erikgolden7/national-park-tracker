@@ -1,0 +1,22 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.image {
+  /* opacity: 0.85; */
+  background: url('../../assets/night1.jpg') center center no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.map {
+  height: auto;
+  border: solid black 0.5px;
+}
+
+.list {
+  width: 50%;
+  height: auto;
+}

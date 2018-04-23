@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import USAMap from "react-usa-map";
 import axios from "axios";
+import './ParkSearch/parkSearch.css'
 
 class UsMap extends Component {
   mapHandler = event => {
@@ -13,8 +14,11 @@ class UsMap extends Component {
 
   render() {
     return (
-      <div className="App">
-        <USAMap width={600} height={500} onClick={this.mapHandler} />
+      <div >
+      <div className="image">
+      <USAMap className="map" defaultFill="white" width={800} height={600} onClick={this.mapHandler} />
+      </div>
+        
       </div>
     );
   }

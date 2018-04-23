@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import NatParkList from '../NatParkList'
+import NatParkList from './NatParkList/NatParkList'
 import UsMap from '../UsMap'
+import './parkSearch.css'
 
 export default class ParkSearch extends Component {
   constructor (props) {
@@ -19,7 +20,7 @@ export default class ParkSearch extends Component {
 
   render() {
     return (
-      <div>
+      <div className="search">
         <UsMap setParks={this.stateParks} /> 
         <NatParkList parkList={this.state.parks} />
       </div>
