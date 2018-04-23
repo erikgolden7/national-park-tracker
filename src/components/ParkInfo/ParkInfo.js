@@ -1,15 +1,50 @@
 import React, { Component } from 'react';
+import axios from "axios";
+import "./parkInfo.css"
 
 export default class ParkInfo extends Component {
+  constructor(props) {
+    super(props)
+    
+    this.state = {
+      alerts: []
+    }
+  }
+  
+  componentDidMount() {
+    const code = this.props.state.parkCode
+    axios.get(`/api/alerts/${code}`)
+    .then((res) => {
+      this.setState({alerts: res.data.data})
+    })
+  }
 
   render() {
-    console.log(this.props.state);
+    console.log(this.state.alerts.length);
     const {description, designation, directionsInfo, fullName, id, latLong, name, parkCode, states, url, weatherInfo} = this.props.state;
     
-    return (
+    const alert = this.state.alerts.map((e) => {  
+      console.log(e, e.title, e.category);
       <div>
-        Park Info View
-        <div>{fullName}</div>
+        <div className="danger" />
+        <div className="info" />
+        <div className="caution" />
+      
+      </div>
+    })
+
+    return (
+      <div className="desc-body">
+        {
+          this.state.alerts.length === 1 ?
+          <div className="alert">{this.state.alerts.length} ALERT IN EFFECT</div> 
+          : this.state.alerts.length > 1 ? 
+          <div className="alert">{this.state.alerts.length} ALERTS IN EFFECT</div> 
+          : ''
+        }
+        {alert}
+
+        <hr/>
         <div>{designation}</div>
         <div>{description}</div>
         <div>{id}</div>

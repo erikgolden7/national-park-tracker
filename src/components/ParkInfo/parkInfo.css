@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+
+.desc-body {
+  padding: 20px;
+  width: 75%;
+  margin: auto;
+}
+
+.alert {
+  padding: 3px;
+  background: #671107;
+  font-family: 'Open Sans Condensed', sans-serif;
+  width: auto;
+  max-width: 180px;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+}
+
+.danger, .caution, .info {
+  height: 35px;
+  width: 35px;
+}
+
+.danger {
+  background: url('../../assets/alerts/danger.png') center center no-repeat;
+  background-size: contain;
+}
+
+.caution {
+  background: url('../../assets/alerts/caution.png') center center no-repeat;
+  background-size: contain;
+}
+
+.info {
+  background: url('../../assets/alerts/info.png') center center no-repeat;
+  background-size: contain;
+}

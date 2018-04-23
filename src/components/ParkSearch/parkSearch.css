@@ -4,11 +4,32 @@
   justify-content: space-around;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+}
+
 .image {
-  /* opacity: 0.85; */
   background: url('../../assets/night1.jpg') center center no-repeat;
   background-size: cover;
-  z-index: 1;
+}
+
+.image-small-header {
+  width: 40%;
+}
+
+.right-header {
+  width: 60%;
+}
+
+.park-title {
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  border-bottom: solid gray 0.3px;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: georgia;
 }
 
 .map {
