@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import GoogleMap from "./GoogleMap/GoogleMap"
 import "./parkInfo.css"
 
 export default class ParkInfo extends Component {
@@ -12,6 +13,7 @@ export default class ParkInfo extends Component {
   }
   
   componentDidMount() {
+    console.log(this.props.state.image);
     const code = this.props.state.parkCode
     axios.get(`/api/alerts/${code}`)
     .then((res) => {
@@ -20,18 +22,70 @@ export default class ParkInfo extends Component {
   }
 
   render() {
-    console.log(this.state.alerts.length);
-    const {description, designation, directionsInfo, fullName, id, latLong, name, parkCode, states, url, weatherInfo} = this.props.state;
+
+    const {description, designation, id, latLong, name, parkCode, states, url, weatherInfo} = this.props.state;
     
-    const alert = this.state.alerts.map((e) => {  
+    const alert = this.state.alerts.map((e, i) => {  
       console.log(e, e.title, e.category);
-      <div>
-        <div className="danger" />
-        <div className="info" />
-        <div className="caution" />
       
+      return(
+      <div key={i}>
+      {
+
+        e.category === "Danger" ?
+        <div>
+          <div className="alert-item">
+            <div className="danger" />
+            <div className="alert-title" style={{color: '#7A1F1A'}}>
+              {e.title}
+            </div>
+          </div>
+          <div className="alert-desc">
+            {e.description}
+          </div>
+        </div>
+
+        : e.category === "Caution" ?
+        <div>
+          <div className="alert-item">
+            <div className="caution" />
+            <div className="alert-title" style={{color: '#F7C746'}}>
+              {e.title}
+            </div>
+          </div>
+          <div className="alert-desc">
+            {e.description}
+          </div>
+        </div>
+        : e.category === "Information" ?
+        <div>
+          <div className="alert-item">
+            <div className="info" />
+            <div className="alert-title" style={{color: '#2057AA'}}>
+              {e.title}
+            </div>
+          </div>
+          <div className="alert-desc">
+            {e.description}
+          </div>
+        </div>
+        : e.category === "Park Closure" ?
+        <div>
+          <div className="alert-item">
+            <div className="closed" />
+            <div className="alert-title" style={{color: '#7A1F1A'}}>
+              {e.title}
+            </div>
+          </div>
+          <div className="alert-desc">
+            {e.description}
+          </div>
+        </div>
+        : ''
+      }
+      <hr/>
       </div>
-    })
+    )})
 
     return (
       <div className="desc-body">
@@ -43,10 +97,18 @@ export default class ParkInfo extends Component {
           : ''
         }
         {alert}
+        
+        <div className="large-title-text" > Basic Information </div>
+        {
+          //parkCode &&
+          // <img style={{textAlign:"left"}} src={require(`../../assets/parks/${parkCode}.jpg`)} alt="Park Image" className="img-responsive"/>
 
-        <hr/>
+        }
+        <div className="text">{description}</div>
+
         <div>{designation}</div>
-        <div>{description}</div>
+        <GoogleMap name={name} latLong={latLong} />
+        
         <div>{id}</div>
         <div>{latLong}</div>
         <div>{name}</div>

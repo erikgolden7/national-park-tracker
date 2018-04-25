@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NatParkList from './NatParkList/NatParkList'
-import UsMap from '../UsMap'
+import UsMap from './UsMap/UsMap'
 import './parkSearch.css'
 
 export default class ParkSearch extends Component {

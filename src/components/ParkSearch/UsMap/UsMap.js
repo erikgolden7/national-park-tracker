@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import USAMap from "react-usa-map";
 import axios from "axios";
-import './ParkSearch/parkSearch.css'
+import './usMap.css'
 
 class UsMap extends Component {
   mapHandler = event => {

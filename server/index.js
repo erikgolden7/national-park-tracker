@@ -18,6 +18,7 @@ app.use(cors())
 app.get('/api/parks/:id', mainCtrl.getParkByState)
 app.get('/api/alerts/:code', mainCtrl.getAlerts)
 
+
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`)
 })
