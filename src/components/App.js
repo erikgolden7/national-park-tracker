@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <div className='App'>
        
-      <Nav/>
+      <Nav />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/history' component={ParkHistory} />
