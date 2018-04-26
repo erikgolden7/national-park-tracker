@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import ParkInfo from './ParkInfo/ParkInfo'
 import HomePage from './HomePage/HomePage'
 import ParkSearch from './ParkSearch/ParkSearch'
 import Badges from './Badges/Badges'
 import About from './About/About'
+import ParkHistory from './ParkHistory/ParkHistory'
 import Nav from './Nav/Nav'
 import NotFound from './NotFound/NotFound'
 import {Switch, Route} from 'react-router-dom'
@@ -31,7 +31,7 @@ class App extends Component {
       <Nav/>
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route path='/info' component={ParkInfo} />
+          <Route path='/history' component={ParkHistory} />
           <Route path='/search' component={ParkSearch} />
           <Route path='/badges' component={Badges} />
           <Route path='/about' component={About} />

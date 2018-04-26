@@ -4,7 +4,7 @@ const cors = require('cors')
 const port = process.env.PORT || 3001
 require('dotenv').config()
 
-const mainCtrl = require('./mainCtrl.js')
+const mainCtrl = require('./controllers/mainCtrl.js')
 
 const app = express()
 

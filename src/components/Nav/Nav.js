@@ -7,11 +7,28 @@ export default class Nav extends Component {
     return (
       <div>
         <header className='App-header nav'>
-          <Link className="nav-link" to="/info">Park History</Link>
-          <Link className="nav-link" to="/search">Search Parks</Link>
           <Link to="/" className='app-logo' />
-          <Link to="/badges" className="nav-link">Junior Ranger Badges</Link>
-          <Link to="/about" className="nav-link">Favorites</Link>
+
+          <Link to="/history" className="nav-item">
+            <div className="history-icon"></div>
+            <div> Park History </div>
+          </Link>
+            
+          <Link to="/search" className="nav-item">
+            <div className="park-icon"></div>
+            <div> Search Parks </div>
+          </Link>
+
+          <Link to="/badges" className="nav-item">
+            <div className="badge-icon"></div>
+            <div> Junior Ranger </div>
+          </Link>
+
+          <Link to="/about" className="nav-item">
+            <div className="favorite-icon"></div>
+            <div> Favorites </div>
+          </Link>
+        
         </header>
       </div>
     );

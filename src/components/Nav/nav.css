@@ -1,20 +1,59 @@
 .nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-direction: row;
+  align-items: flex-start;
+  
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  font-size: 14px;
+  height: 50px;
+  margin-right: 40px;
+  text-decoration: none;
+  color: white;
+}
+
+.favorite-icon, .park-icon, .history-icon, .badge-icon {
+  width: 30px;
+  height: 30px;
 }
 
 .app-logo {
-  background: url('../../assets/NavIcon.png') center center no-repeat;
+  background: url('../../assets/nav/np-logo.png') center center no-repeat;
   background-size: contain;
-  width: 120px;
-  height: 60px;
+  height: 50px;
+  width: 230px;
+  margin: 0 40px 0 5px;
 }
 
-.nav-link {
-  text-decoration: none;
-  list-style: none;
-  color: white;
-  font-size: 20px;
+.favorite-icon {
+  background: url('../../assets/nav/favorites.png') center center no-repeat;
+  background-size: contain;
 }
+
+.park-icon {
+  background: url('../../assets/nav/parks.png') center center no-repeat;
+  background-size: contain;
+}
+
+.history-icon {
+  background: url('../../assets/nav/history.png') center center no-repeat;
+  background-size: contain;
+}
+
+.badge-icon {
+  background: url('../../assets/nav/badge.png') center center no-repeat;
+  background-size: contain;
+}
+
+
+
+
+
+
+

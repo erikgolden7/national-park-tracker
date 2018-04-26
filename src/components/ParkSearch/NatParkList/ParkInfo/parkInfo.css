@@ -26,22 +26,22 @@
 }
 
 .danger {
-  background: url('../../assets/alerts/danger.png') center center no-repeat;
+  background: url('../../../../assets/alerts/danger.png') center center no-repeat;
   background-size: contain;
 }
 
 .caution {
-  background: url('../../assets/alerts/caution.png') center center no-repeat;
+  background: url('../../../../assets/alerts/caution.png') center center no-repeat;
   background-size: contain;
 }
 
 .info {
-  background: url('../../assets/alerts/info.png') center center no-repeat;
+  background: url('../../../../assets/alerts/info.png') center center no-repeat;
   background-size: contain;
 }
 
 .closed {
-  background: url('../../assets/alerts/closed.png') center center no-repeat;
+  background: url('../../../../assets/alerts/closed.png') center center no-repeat;
   background-size: contain;
 }
 

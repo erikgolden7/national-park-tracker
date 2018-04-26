@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ParkInfo from '../../ParkInfo/ParkInfo'
+import ParkInfo from './ParkInfo/ParkInfo'
 import './natParkList.css'
 
 export default class NatParkList extends Component {
