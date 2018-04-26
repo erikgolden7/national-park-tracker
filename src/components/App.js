@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import '../App.css'
 import ParkInfo from './ParkInfo/ParkInfo'
 import HomePage from './HomePage/HomePage'
 import ParkSearch from './ParkSearch/ParkSearch'
@@ -8,6 +7,7 @@ import About from './About/About'
 import Nav from './Nav/Nav'
 import NotFound from './NotFound/NotFound'
 import {Switch, Route} from 'react-router-dom'
+import '../styles/App.css'
 
 class App extends Component {
   constructor (props) {

@@ -12,7 +12,6 @@ export default class NatParkList extends Component {
   }
   
   render () {
-    console.log("Toggle:",this.props.toggle, "List Toggle:",this.props.listToggle);
     
     const parkList = this.props.parkList.map((e, i) => {
       // console.log(e)

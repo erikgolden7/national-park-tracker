@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import {Map, Marker, GoogleApiWrapper, InfoWindow} from 'google-maps-react';
 import axios from "axios"
-import { toLong } from 'ip';
-import {Link} from "react-router-dom"
 require('dotenv').config()
 
 const LoadingContainer = (props) => (
   <div>Fancy loading container!</div>
 )
-
 class GoogleMap extends Component {
   constructor(props) {
     super(props);
@@ -64,7 +61,6 @@ class GoogleMap extends Component {
       width: '75%',
       height: '500px'
     }
-    console.log(this.state.lat, this.state.lng)
     return (
       <Map google={this.props.google} zoom={this.state.zoom} style={style} center={{lat: this.state.lat, lng: this.state.lng}} mapTypeId='terrain' onClick={this.onMapClicked} >      
         <Marker
