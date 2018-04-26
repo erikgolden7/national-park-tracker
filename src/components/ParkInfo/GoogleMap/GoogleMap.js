@@ -10,44 +10,38 @@ const LoadingContainer = (props) => (
 )
 
 class GoogleMap extends Component {
-constructor(props) {
-  super(props);
-  
-  this.state = {
-    map: '',
-    lat: '',
-    lng: '',
-    zoom: 10,
-    showingInfoWindow: false,
-    activeMarker: {},
-    selectedPlace: {}
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      map: '',
+      lat: '',
+      lng: '',
+      zoom: 10,
+      showingInfoWindow: false,
+      activeMarker: {},
+      selectedPlace: {}
+    }
   }
-}
 
-componentDidMount() {
-  axios.get('/api/googleMap').then((res)=>{
-    console.log(res);
-    this.setState({map: res})
-  })
-  this.findLatLong()
-}
+  componentDidMount() {
+    axios.get('/api/googleMap').then((res)=>{
+      console.log(res);
+      this.setState({map: res})
+    })
+    this.findLatLong()
+  }
 
-findLatLong(){
-  let lat = '';
-  let lng = '';
-  const str = this.props.state.latLong.split('')
-  lat = str.splice(4, 8);
-  lng = str.splice(14, 8);
-  this.setState({lat: Number(lat.join('')), lng: Number(lng.join(''))})
-}
+  findLatLong(){
+    let lat = '';
+    let lng = '';
+    const str = this.props.state.latLong.split('')
+    lat = str.splice(4, 8);
+    lng = str.splice(14, 8);
+    this.setState({lat: Number(lat.join('')), lng: Number(lng.join(''))})
+  }
 
-// onMarkerClick(props, marker, e){
-//   window.open(props.url), '_blank';
-// }
-
-onMarkerClick = (props, marker, e) =>{
-console.log(props);
-
+  onMarkerClick = (props, marker, e) =>{
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -84,7 +78,7 @@ console.log(props);
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}>
             <div>
-              <h1>{this.state.selectedPlace.name}</h1>
+              <h3>{this.state.selectedPlace.name}</h3>
             </div>
         </InfoWindow>
       </Map>

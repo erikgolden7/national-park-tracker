@@ -28,6 +28,12 @@
   font-family: georgia;
 }
 
+.sub-title {
+  padding: 12px;
+  font-size: 22px;
+  font-family: georgia;
+}
+
 .map {
   height: auto;
   border: solid black 0.5px;

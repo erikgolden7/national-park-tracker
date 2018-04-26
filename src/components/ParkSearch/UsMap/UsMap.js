@@ -25,8 +25,13 @@ class UsMap extends Component {
             </div>
             <div className="right-header">
               <div className="park-title">
-                {this.props.state.fullName}
+                {this.props.state.name}
               </div>
+              <div className="sub-title">
+                {this.props.state.designation}
+              </div>  
+              
+              
             </div>
           </div>
           

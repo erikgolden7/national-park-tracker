@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import GoogleMap from "./GoogleMap/GoogleMap"
-import {Link} from "react-router-dom"
 import "./parkInfo.css"
 
 export default class ParkInfo extends Component {
@@ -23,11 +22,9 @@ export default class ParkInfo extends Component {
   }
 
   render() {
-
     const {description, designation, id, latLong, name, parkCode, states, url, weatherInfo, fullName} = this.props.state;
     
     const alert = this.state.alerts.map((e, i) => {  
-      console.log(e, e.title, e.category);
       
       return(
       <div key={i}>
@@ -109,12 +106,16 @@ export default class ParkInfo extends Component {
         <div className="text">{weatherInfo}</div>
         <div className="large-title-text"> Additional Information: </div>
         <div className="text">
-        States: <span> {states} </span>
+        <span style={{fontWeight:"bold"}}>States: </span>{states}
         </div>
         <div className="text">
-        {name} Website: <span> <a target="_blank" href={url}>{url}</a> </span>
+        {name} Website: <span> <a style={{color:"darkBlue"}} target="_blank" href={url}>{url}</a> </span>
         </div>
-        <GoogleMap state={this.props.state} style={{width:"75%", height: "auto", marginTop:30}} /> 
+        <div className="text">
+        Coordinates: <span> {latLong} </span>
+        </div>
+        <button className="back-btn" onClick={this.props.select} > ⬅ Back </button>
+        <GoogleMap state={this.props.state} style={{width:"75%", height: "auto", marginTop:'50px'}} /> 
       </div>
     );
   }

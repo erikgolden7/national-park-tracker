@@ -6,6 +6,7 @@ import ParkSearch from './ParkSearch/ParkSearch'
 import Badges from './Badges/Badges'
 import About from './About/About'
 import Nav from './Nav/Nav'
+import NotFound from './NotFound/NotFound'
 import {Switch, Route} from 'react-router-dom'
 
 class App extends Component {
@@ -34,6 +35,7 @@ class App extends Component {
           <Route path='/search' component={ParkSearch} />
           <Route path='/badges' component={Badges} />
           <Route path='/about' component={About} />
+          <Route path="*" component={NotFound} />
         </Switch>
       </div>
     )
