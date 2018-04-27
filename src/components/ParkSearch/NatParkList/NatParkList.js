@@ -12,9 +12,7 @@ export default class NatParkList extends Component {
   }
   
   render () {
-    
     const parkList = this.props.parkList.map((e, i) => {
-      // console.log(e)
       return (
         <div key={i}>
           <div className="park-list-item" onClick={() => {this.props.selectPark(e) ; this.props.select()}}>

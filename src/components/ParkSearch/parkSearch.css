@@ -1,6 +1,11 @@
 .search {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
 }
 
+.search-alt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

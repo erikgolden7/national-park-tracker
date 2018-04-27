@@ -1,11 +1,14 @@
 .park-list {
   width: 100%;
   height: auto;
+  max-height: 600px;
+  overflow: auto;
 }
 
 .park-list-item {
   border: solid gray 1px;
   padding: 3px 25px;
+  text-align: left;
 }
 
 .park-list-item:hover {

@@ -3,18 +3,18 @@ import {Link} from "react-router-dom"
 import { Redirect } from 'react-router';
 
 import './homePage.css'
-import tortugas from "../../assets/tortugas.jpg"
-import royale from "../../assets/royale.jpg"
-import channelislands from "../../assets/channelislands.jpg"
-import guadalupe from "../../assets/guadalupe.jpg"
-import sanddunes from "../../assets/sanddunes.jpg"
-import cascades from "../../assets/cascades.jpg"
-import gates from "../../assets/gates.jpg"
-import congaree from "../../assets/congaree.jpg"
-import basin from "../../assets/basin.jpg"
-import lassen from "../../assets/lassen.jpg"
-import grandcanyon from "../../assets/grandcanyon.jpg"
-import yellowstone from "../../assets/yellowstone.jpg"
+import tortugas from "../../assets/parks/tortugas.jpg"
+import royale from "../../assets/parks/royale.jpg"
+import channelislands from "../../assets/parks/channelislands.jpg"
+import guadalupe from "../../assets/parks/guadalupe.jpg"
+import sanddunes from "../../assets/parks/sanddunes.jpg"
+import cascades from "../../assets/parks/cascades.jpg"
+import gates from "../../assets/parks/gates.jpg"
+import congaree from "../../assets/parks/congaree.jpg"
+import basin from "../../assets/parks/basin.jpg"
+import lassen from "../../assets/parks/lassen.jpg"
+import grandcanyon from "../../assets/parks/grandcanyon.jpg"
+import yellowstone from "../../assets/parks/yellowstone.jpg"
 
 class HomePage extends Component {
   constructor(props) {
@@ -36,10 +36,12 @@ class HomePage extends Component {
     }
     return (
       <div className='App'>
-        <div className="park-img" />
+        <div className="park-img">
+          <div className="arrow" />
+        </div>
         <div className="container">
           <div className="content">
-            <a href="https://www.nps.gov/cany/index.htm" target="_blank">
+            <a href="https://www.nps.gov/drto/index.htm" target="_blank">
               <div className="content-overlay" />
               <img className="content-image" src={tortugas} />
               <div className="content-details fadeIn-bottom">
@@ -51,7 +53,7 @@ class HomePage extends Component {
         </div>
         <div className="container">
           <div className="content">
-            <a href="https://www.nps.gov/cany/index.htm" target="_blank">
+            <a href="https://www.nps.gov/yell/index.htm" target="_blank">
               <div className="content-overlay" />
               <img className="content-image" src={yellowstone} />
               <div className="content-details fadeIn-bottom">
@@ -63,7 +65,7 @@ class HomePage extends Component {
         </div>
         <div className="container">
           <div className="content">
-            <a href="https://www.nps.gov/cany/index.htm" target="_blank">
+            <a href="https://www.nps.gov/gumo/index.htm" target="_blank">
               <div className="content-overlay" />
               <img className="content-image" src={guadalupe} />
               <div className="content-details fadeIn-bottom">
@@ -75,7 +77,7 @@ class HomePage extends Component {
         </div>
         <div className="container">
           <div className="content">
-            <a href="https://www.nps.gov/cany/index.htm" target="_blank">
+            <a href="https://www.nps.gov/grsa/index.htm" target="_blank">
               <div className="content-overlay" />
               <img className="content-image" src={sanddunes} />
               <div className="content-details fadeIn-bottom">
@@ -87,7 +89,7 @@ class HomePage extends Component {
         </div>
         <div className="container">
           <div className="content">
-            <a href="https://www.nps.gov/cany/index.htm" target="_blank">
+            <a href="https://www.nps.gov/noca/index.htm" target="_blank">
               <div className="content-overlay" />
               <img className="content-image" src={cascades} />
               <div className="content-details fadeIn-bottom">
@@ -99,7 +101,7 @@ class HomePage extends Component {
         </div>
         <div className="container">
           <div className="content">
-            <a href="https://www.nps.gov/cany/index.htm" target="_blank">
+            <a href="https://www.nps.gov/gaar/index.htm" target="_blank">
               <div className="content-overlay" />
               <img className="content-image" src={gates} />
               <div className="content-details fadeIn-bottom">
@@ -111,7 +113,7 @@ class HomePage extends Component {
         </div>
         <div className="container">
           <div className="content">
-            <a href="https://www.nps.gov/cany/index.htm" target="_blank">
+            <a href="https://www.nps.gov/cong/index.htm" target="_blank">
               <div className="content-overlay" />
               <img className="content-image" src={congaree} />
               <div className="content-details fadeIn-bottom">
@@ -123,7 +125,7 @@ class HomePage extends Component {
         </div>
         <div className="container">
           <div className="content">
-            <a href="https://www.nps.gov/cany/index.htm" target="_blank">
+            <a href="https://www.nps.gov/grba/index.htm" target="_blank">
               <div className="content-overlay" />
               <img className="content-image" src={basin} />
               <div className="content-details fadeIn-bottom">
@@ -135,7 +137,7 @@ class HomePage extends Component {
         </div>
         <div className="container">
           <div className="content">
-            <a href="https://www.nps.gov/cany/index.htm" target="_blank">
+            <a href="https://www.nps.gov/chis/index.htm" target="_blank">
               <div className="content-overlay" />
               <img className="content-image" src={channelislands} />
               <div className="content-details fadeIn-bottom">
@@ -147,7 +149,7 @@ class HomePage extends Component {
         </div>
         <div className="container">
           <div className="content">
-            <a href="https://www.nps.gov/cany/index.htm" target="_blank">
+            <a href="https://www.nps.gov/lavo/index.htm" target="_blank">
               <div className="content-overlay" />
               <img className="content-image" src={lassen} />
               <div className="content-details fadeIn-bottom">
@@ -159,7 +161,7 @@ class HomePage extends Component {
         </div>
         <div className="container">
           <div className="content">
-            <a href="https://www.nps.gov/cany/index.htm" target="_blank">
+            <a href="https://www.nps.gov/grca/index.htm" target="_blank">
               <div className="content-overlay" />
               <img className="content-image" src={grandcanyon} />
               <div className="content-details fadeIn-bottom">
@@ -171,7 +173,7 @@ class HomePage extends Component {
         </div>
         <div className="container">
           <div className="content">
-            <a href="https://www.nps.gov/cany/index.htm" target="_blank">
+            <a href="https://www.nps.gov/isro/index.htm" target="_blank">
               <div className="content-overlay" />
               <img className="content-image" src={royale} />
               <div className="content-details fadeIn-bottom">

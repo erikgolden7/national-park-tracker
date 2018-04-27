@@ -37,7 +37,7 @@ class UsMap extends Component {
           
           :
           <div className="image">
-            <USAMap className="map" defaultFill="white" width={700} height={500} 
+            <USAMap className="map" defaultFill="white" width={800} height={600} 
             onClick={(e) => {this.mapHandler(e) ; this.props.listSelect() ; this.props.select() }} />
           </div>
         }

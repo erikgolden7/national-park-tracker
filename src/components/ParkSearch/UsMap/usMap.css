@@ -6,8 +6,9 @@
 }
 
 .image {
-  background: url('../../../assets/night1.jpg') center center no-repeat;
-  background-size: cover;
+  background: dimgray;
+  min-width: 800px;
+  width: 60%;
 }
 
 .image-small-header {
@@ -40,6 +41,6 @@
 }
 
 .list {
-  width: 50%;
+  width: 40%;
   height: auto;
 }
