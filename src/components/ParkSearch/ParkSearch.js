@@ -11,7 +11,8 @@ export default class ParkSearch extends Component {
       parks: [],
       toggle: false,
       listToggle: true,
-      state: {}
+      state: {},
+      selectedState: ''
     }
 
     this.stateParks = this.stateParks.bind(this)
@@ -19,6 +20,7 @@ export default class ParkSearch extends Component {
     this.listToggle = this.listToggle.bind(this)
     this.selectMap = this.selectMap.bind(this)
     this.selectPark = this.selectPark.bind(this)
+    this.setSelectedState = this.setSelectedState.bind(this)
   }
 
   stateParks (parks) {
@@ -37,28 +39,33 @@ export default class ParkSearch extends Component {
     this.setState({listToggle: false})
   }
 
-  selectPark (state) {
+  selectPark (state) { 
     this.setState({state})
   }
 
+  setSelectedState(event){
+    this.setState({selectedState: event})
+  }
+
   render() {
-    const {toggle, listToggle, parks, state} = this.state
+    const {toggle, listToggle, parks, state, selectedState} = this.state
+
     return (
       <div className="search">
         {
           (toggle && !listToggle) || (!toggle && listToggle) ?
           <div className="top">
             <div className="top-left">
-              <UsMap listSelect={this.listToggle} select={this.selectMap} toggle={toggle} listToggle={listToggle} setParks={this.stateParks} state={state}/>
+              <UsMap listSelect={this.listToggle} select={this.selectMap} toggle={toggle} listToggle={listToggle} setParks={this.stateParks} state={state} setSelectedState={this.setSelectedState}/>
             </div>
             <div className="top-right">
               <div className="find-img"/>
             </div>
           </div> 
           :
-          <UsMap listSelect={this.listToggle} select={this.selectMap} toggle={toggle} listToggle={listToggle} setParks={this.stateParks} state={state}/>
+          <UsMap listSelect={this.listToggle} select={this.selectMap} toggle={toggle} listToggle={listToggle} setParks={this.stateParks} state={state}setSelectedState={this.setSelectedState} />
         }
-        <NatParkList select={this.setToggle} toggle={toggle} listToggle={listToggle} parkList={parks} selectPark={this.selectPark} state={state} />
+        <NatParkList select={this.setToggle} toggle={toggle} listToggle={listToggle} parkList={parks} selectPark={this.selectPark} state={state} selectedState={selectedState} />
       </div>
     );
   }

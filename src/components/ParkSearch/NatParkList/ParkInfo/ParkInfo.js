@@ -24,11 +24,12 @@ export default class ParkInfo extends Component {
 
   render() {
     const {description, latLong, name, parkCode, states, url, weatherInfo} = this.props.state;
+    
     const alert = this.state.alerts.map((e, i) => {  
-    return(
-      <ParkAlerts state={this.props.state} e={e} i={i}/>
-    )
-  })
+      return(
+        <ParkAlerts key={i} state={this.props.state} e={e} i={i}/>
+      )
+    })
 
     return (
       <div className="desc-body">

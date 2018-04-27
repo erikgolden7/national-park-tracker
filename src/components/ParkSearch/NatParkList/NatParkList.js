@@ -7,11 +7,13 @@ export default class NatParkList extends Component {
     super(props);
     
     this.state = {
-      state: {}
+      state: ''
     }
   }
+
   
   render () {
+
     const parkList = this.props.parkList.map((e, i) => {
       return (
         <div key={i}>
@@ -27,7 +29,12 @@ export default class NatParkList extends Component {
         {
           this.props.toggle && !this.props.listToggle 
           ?
-          parkList 
+          <div>
+            <div className="list-header">
+              State: {this.props.selectedState}
+            </div>  
+            {parkList} 
+          </div>
           :
           !this.props.toggle && !this.props.listToggle 
           ?

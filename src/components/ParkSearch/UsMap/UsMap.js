@@ -4,10 +4,12 @@ import axios from "axios";
 import './usMap.css'
 
 class UsMap extends Component {
+
   mapHandler = event => {
+    console.log(event.target.dataset.name);
+    this.props.setSelectedState(event.target.dataset.name);
     const id = event.target.dataset.name;
     axios.get(`/api/parks/${id}`).then(res => {
-      // console.log(res.data.data);
       this.props.setParks(res.data.data);
     });
   };
