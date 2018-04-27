@@ -45,7 +45,19 @@ export default class ParkSearch extends Component {
     const {toggle, listToggle, parks, state} = this.state
     return (
       <div className="search">
-        <UsMap listSelect={this.listToggle} select={this.selectMap} toggle={toggle} listToggle={listToggle} setParks={this.stateParks} state={state}/> 
+        {
+          (toggle && !listToggle) || (!toggle && listToggle) ?
+          <div className="top">
+            <div className="top-left">
+              <UsMap listSelect={this.listToggle} select={this.selectMap} toggle={toggle} listToggle={listToggle} setParks={this.stateParks} state={state}/>
+            </div>
+            <div className="top-right">
+              <div className="find-img"/>
+            </div>
+          </div> 
+          :
+          <UsMap listSelect={this.listToggle} select={this.selectMap} toggle={toggle} listToggle={listToggle} setParks={this.stateParks} state={state}/>
+        }
         <NatParkList select={this.setToggle} toggle={toggle} listToggle={listToggle} parkList={parks} selectPark={this.selectPark} state={state} />
       </div>
     );

@@ -183,7 +183,7 @@ class HomePage extends Component {
             </a>
           </div>
         </div>
-        <button onClick={this.onButtonClick} type="button" className="show-btn">Show More...</button>
+        <button onClick={this.onButtonClick} type="button" className="show-btn">Explore More...</button>
       </div>
     )
   }

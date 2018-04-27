@@ -35,7 +35,7 @@ export default class NatParkList extends Component {
             <ParkInfo select={this.props.select} state={this.props.state}/>
           </div>
           :
-          <div>Select a state and park from the map above to view details.</div>
+          <div className="list-desc">Select a state from the map above to view list of parks ⇧</div>
         }
       </div>
     )

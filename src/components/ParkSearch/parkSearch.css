@@ -1,11 +1,31 @@
 .search {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.search-alt {
+.top {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.top-left {
+  width: 60%;
+  height: 50vh;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 500px;
+  padding: 20px;
+}
+
+.find-img {
+  background: url('../../assets/find-your-park.jpg') center center no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 400px;
 }

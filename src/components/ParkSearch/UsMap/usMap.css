@@ -7,8 +7,8 @@
 
 .image {
   background: dimgray;
-  min-width: 800px;
-  width: 60%;
+  padding: 20px;
+  height: 500px;
 }
 
 .image-small-header {
@@ -37,6 +37,7 @@
 
 .map {
   height: auto;
+  margin: auto;
   border: solid black 0.5px;
 }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ParkAlerts from "./ParkAlerts"
 import axios from "axios";
 import GoogleMap from "./GoogleMap/GoogleMap"
 import "./parkInfo.css"
@@ -20,69 +21,14 @@ export default class ParkInfo extends Component {
     })
   }
 
+
   render() {
     const {description, latLong, name, parkCode, states, url, weatherInfo} = this.props.state;
-    
     const alert = this.state.alerts.map((e, i) => {  
-      
-      return(
-      <div key={i}>
-      {
-
-        e.category === "Danger" ?
-        <div>
-          <div className="alert-item">
-            <div className="danger" />
-            <div className="alert-title" style={{color: '#7A1F1A'}}>
-              {e.title}
-            </div>
-          </div>
-          <div className="alert-desc">
-            {e.description}
-          </div>
-        </div>
-
-        : e.category === "Caution" ?
-        <div>
-          <div className="alert-item">
-            <div className="caution" />
-            <div className="alert-title" style={{color: '#F7C746'}}>
-              {e.title}
-            </div>
-          </div>
-          <div className="alert-desc">
-            {e.description}
-          </div>
-        </div>
-        : e.category === "Information" ?
-        <div>
-          <div className="alert-item">
-            <div className="info" />
-            <div className="alert-title" style={{color: '#2057AA'}}>
-              {e.title}
-            </div>
-          </div>
-          <div className="alert-desc">
-            {e.description}
-          </div>
-        </div>
-        : e.category === "Park Closure" ?
-        <div>
-          <div className="alert-item">
-            <div className="closed" />
-            <div className="alert-title" style={{color: '#7A1F1A'}}>
-              {e.title}
-            </div>
-          </div>
-          <div className="alert-desc">
-            {e.description}
-          </div>
-        </div>
-        : ''
-      }
-      <hr/>
-      </div>
-    )})
+    return(
+      <ParkAlerts state={this.props.state} e={e} i={i}/>
+    )
+  })
 
     return (
       <div className="desc-body">
