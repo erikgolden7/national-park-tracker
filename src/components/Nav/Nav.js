@@ -1,9 +1,30 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom"
+import axios from 'axios'
 import './nav.css'
-
+require('dotenv').config()
 export default class Nav extends Component {
+
+componentDidMount() {
+  axios.get('/auth/me').then( res => {
+    console.log(res.data)
+  })
+}    
+
+// handleLogout(){
+//   window.location.href = "/logout";
+// }
+
+
+
+
+
+
   render() {
+    console.log(
+      process.env.REACT_APP_LOGIN
+    );
+    
     return (
       <div>
         <nav className='nav'>
@@ -24,11 +45,14 @@ export default class Nav extends Component {
             <div> Junior Ranger </div>
           </Link>
 
-          <Link to="/about" className="nav-item link-3">
+          <Link to="/favorites" className="nav-item link-3">
             <div className="favorite-icon"></div>
             <div> Favorites </div>
           </Link>
-        
+
+          <button onClick={()=> window.location.href = process.env.REACT_APP_LOGIN }>Sign In</button>
+          <button onClick={()=> window.location.href = process.env.REACT_APP_LOGOUT }>Sign Off</button>
+
         </nav>
       </div>
     );

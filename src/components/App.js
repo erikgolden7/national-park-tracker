@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import HomePage from './HomePage/HomePage'
 import ParkSearch from './ParkSearch/ParkSearch'
 import Badges from './Badges/Badges'
-import About from './About/About'
+import Favorites from './Favorites/Favorites'
 import ParkHistory from './ParkHistory/ParkHistory'
 import Nav from './Nav/Nav'
 import NotFound from './NotFound/NotFound'
@@ -34,8 +34,8 @@ class App extends Component {
           <Route path='/history' component={ParkHistory} />
           <Route path='/search' component={ParkSearch} />
           <Route path='/badges' component={Badges} />
-          <Route path='/about' component={About} />
-          <Route path="*" component={NotFound} />
+          <Route path='/favorites' component={Favorites} />
+          <Route path='*' component={NotFound} />
         </Switch>
       </div>
     )
