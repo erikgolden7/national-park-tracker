@@ -14,8 +14,8 @@ export default class Nav extends Component {
 
   componentDidMount() {
     axios.get('/auth/me').then( res => {
-      console.log(res.data)
-      this.setState({user: res.data})
+      console.log(res.data[0])
+      this.setState({user: res.data[0]})
     })
   }    
 
@@ -55,7 +55,10 @@ export default class Nav extends Component {
               !this.state.user.id ?
               <button className="login-btn" onClick={()=> window.location.href = process.env.REACT_APP_LOGIN }>Sign In</button>
               :
-              <button className="login-btn" onClick={()=> window.location.href = process.env.REACT_APP_LOGOUT }>Sign Off</button>
+              <div>
+              Hello {this.state.user.full_name}
+                <button className="login-btn" onClick={()=> window.location.href = process.env.REACT_APP_LOGOUT }>Sign Off</button>
+              </div>
             }
           </div>
           
