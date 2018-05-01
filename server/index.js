@@ -16,9 +16,10 @@ app.use(cors())
 
 
 app.use( session({
-  secret: '@nyth!ng y0u w@nT',
+  secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true, 
+  cookie: { maxAge: 600000 }
 }));
 
 app.use( passport.initialize() );
@@ -61,12 +62,14 @@ app.get('/auth/me', (req, res, next) => {
   if (!req.user) {
     return res.status(401).send('Log in required');
   } else {
+
     return res.status(200).send(req.user);
   }
 })
 
 app.get('/auth/logout', (req, res) => {
   req.logOut();
+  req.session.destroy()
   res.redirect('http://localhost:3000');
 })
 

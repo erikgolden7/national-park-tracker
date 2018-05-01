@@ -4,9 +4,8 @@
   padding: 5px;
   color: white;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: row;
-  align-items: flex-start;
 }
 
 .nav-item {
@@ -16,7 +15,6 @@
   align-items: center;
   font-size: 14px;
   height: 45px;
-  /* margin-right: 20px; */
   text-decoration: none;
   color: white;
   padding: 2px 12px;
@@ -27,6 +25,22 @@
   background-color: #2ec379;
   color: black;
   border-radius: 2px;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  height: 50px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 10%;
+  height: 50px;
 }
 
 .favorite-icon, .park-icon, .history-icon, .badge-icon {
@@ -62,7 +76,13 @@
   background-size: contain;
 }
 
-
+.login-btn {
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-right: 10px;
+  cursor: pointer;
+}
 
 
 
