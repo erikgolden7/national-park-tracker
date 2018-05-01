@@ -13,17 +13,6 @@ export default class NatParkList extends Component {
 
   
   render () {
-
-    const parkList = this.props.parkList.map((e, i) => {
-      return (
-        <div key={i}>
-          <div className="park-list-item" onClick={() => {this.props.selectPark(e) ; this.props.select()}}>
-            {e.fullName}
-          </div>
-        </div>
-      )
-    })
-
     return (
       <div className='park-list'>
         {
@@ -33,7 +22,20 @@ export default class NatParkList extends Component {
             <div className="list-header">
               State: {this.props.selectedState}
             </div>  
-            {parkList} 
+            {
+              (this.props.parkList.length > 0) ?
+              this.props.parkList.map((e, i) => {
+                return (
+                  <div key={i}>
+                    <div className="park-list-item" onClick={() => {this.props.selectPark(e) ; this.props.select()}}>
+                      {e.fullName}
+                    </div>
+                  </div>
+                )
+              })
+              : <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" />
+            }
+
           </div>
           :
           !this.props.toggle && !this.props.listToggle 

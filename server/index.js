@@ -16,10 +16,16 @@ app.use(json())
 app.use(cors())
 app.use(express.static(__dirname + '/../build'));
 
+// ==========
+// MASSIVE DB
+// ==========
 massive(process.env.CONNECTION_STRING).then( db => {
   app.set('db', db);
 })
 
+// ========================
+// SESSION / AUTHENTICATION
+// ========================
 app.use( session({
   secret: process.env.SESSION_SECRET,
   resave: false,
@@ -83,8 +89,9 @@ app.get('/auth/logout', (req, res) => {
   res.redirect('http://localhost:3000');
 })
 
-
-
+// =========
+// ENDPOINTS
+// =========
 app.get('/api/parks/:id', mainCtrl.getParkByState)
 app.get('/api/alerts/:code', mainCtrl.getAlerts)
 

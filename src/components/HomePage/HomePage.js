@@ -24,7 +24,6 @@ class HomePage extends Component {
     }
   }
   
-
   onButtonClick = () => {
     this.setState({redirect: true});
   }

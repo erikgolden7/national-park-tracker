@@ -31,16 +31,18 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 90%;
+  width: 70%;
   height: 50px;
 }
 
 .nav-right {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  width: 10%;
+  width: 30%;
   height: 50px;
+  font-size: 20px;
 }
 
 .favorite-icon, .park-icon, .history-icon, .badge-icon {
@@ -80,7 +82,7 @@
   padding: 4px 8px;
   font-size: 14px;
   border-radius: 3px;
-  margin-right: 10px;
+  margin: 0 15px 0 25px;
   cursor: pointer;
 }
 
