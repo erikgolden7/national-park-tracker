@@ -4,7 +4,6 @@ import ParkSearch from './ParkSearch/ParkSearch'
 import Badges from './Badges/Badges'
 import Favorites from './Favorites/Favorites'
 import ParkHistory from './ParkHistory/ParkHistory'
-import Nav from './Nav/Nav'
 import NotFound from './NotFound/NotFound'
 import {Switch, Route} from 'react-router-dom'
 import '../styles/App.css'
@@ -27,8 +26,6 @@ class App extends Component {
   render () {
     return (
       <div className='App'>
-       
-      <Nav />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/history' component={ParkHistory} />

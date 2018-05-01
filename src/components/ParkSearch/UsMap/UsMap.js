@@ -6,6 +6,7 @@ import './usMap.css'
 class UsMap extends Component {
 
   mapHandler = event => {
+    this.props.clearParks()
     this.props.setSelectedState(event.target.dataset.name);
     const id = event.target.dataset.name;
     axios.get(`/api/parks/${id}`).then(res => {

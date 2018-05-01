@@ -1,6 +1,7 @@
 const axios = require('axios')
 const baseURL = 'https://developer.nps.gov/api/v1/'
 
+
 module.exports = {
   getParkByState: (req, res, next) => {
     const {id} = req.params
@@ -16,4 +17,17 @@ module.exports = {
       .catch(err => res.status(500).send(err))
   },
 
+  getUserHistory: (req, res, next) => {
+    const db = req.app.get("db");
+    db.get_user_history([ req.params.id ]).then( response => {
+      return res.status(200).send(response)
+    });
+  },
+  
+  visitPark: (req, res) => {
+    const db = req.app.get("db");
+    db.add_visit_park([req.user[0].auth_id, req.body.name, req.body.latLong, req.body.parkCode]).then( response => {
+      return res.status(200).send(response)
+    });
+  }
 }

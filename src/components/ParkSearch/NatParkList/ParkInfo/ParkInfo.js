@@ -21,6 +21,11 @@ export default class ParkInfo extends Component {
     })
   }
 
+  visitPark(latLong, name, parkCode){
+    axios.post('api/visitPark', {latLong, name, parkCode}).then((res) => {
+      console.log(res);
+    })
+  }
 
   render() {
     const {description, latLong, name, parkCode, states, url, weatherInfo} = this.props.state;
@@ -72,6 +77,7 @@ export default class ParkInfo extends Component {
           ''
         }
         <button className="back-btn" onClick={this.props.select} > ⬅ Back </button>
+        <button className="back-btn" onClick={() => this.visitPark(latLong, name, parkCode)} > Been Here! </button>
         {
           this.props.state.latLong ? 
             <GoogleMap state={this.props.state} style={{width:"75%", height: "auto", marginTop:'50px'}} />

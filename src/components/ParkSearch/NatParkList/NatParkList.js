@@ -3,15 +3,7 @@ import ParkInfo from './ParkInfo/ParkInfo'
 import './natParkList.css'
 
 export default class NatParkList extends Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      state: ''
-    }
-  }
 
-  
   render () {
     return (
       <div className='park-list'>
@@ -33,7 +25,7 @@ export default class NatParkList extends Component {
                   </div>
                 )
               })
-              : <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" />
+              : <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt='loader img'/>
             }
 
           </div>

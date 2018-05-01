@@ -13,14 +13,13 @@ export default class Nav extends Component {
 
   componentDidMount() {
     axios.get('/auth/me').then( res => {
-      console.log(res.data[0])
       this.setState({user: res.data[0]})
     })
   }    
 
   render() {
     return (
-      <div>
+      <div style={{marginBottom:60}}>
         <nav className='nav'>
           <div className="nav-left">
             <Link to="/" className='app-logo' />
