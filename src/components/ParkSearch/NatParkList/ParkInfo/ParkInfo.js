@@ -9,7 +9,8 @@ export default class ParkInfo extends Component {
     super(props)
     
     this.state = {
-      alerts: []
+      alerts: [],
+      user: {}
     }
   }
   
@@ -19,15 +20,21 @@ export default class ParkInfo extends Component {
     .then((res) => {
       this.setState({alerts: res.data.data})
     })
+
+    axios.get('/auth/me').then( res => {
+      this.setState({user: res.data[0]})
+    })
   }
 
-  visitPark(latLong, name, parkCode){
+  visitPark(latLong, name, parkCode) {
     axios.post('api/visitPark', {latLong, name, parkCode}).then((res) => {
       console.log(res);
     })
   }
 
   render() {
+    console.log(this.state.user);
+    
     const {description, latLong, name, parkCode, states, url, weatherInfo} = this.props.state;
     
     const alert = this.state.alerts.map((e, i) => {  
@@ -76,8 +83,13 @@ export default class ParkInfo extends Component {
           :
           ''
         }
+        {
+          this.state.user.auth_id ?
+          <div className="favorite" onClick={() => this.visitPark(latLong, name, parkCode)} />
+          : ''
+        }
         <button className="back-btn" onClick={this.props.select} > ⬅ Back </button>
-        <button className="back-btn" onClick={() => this.visitPark(latLong, name, parkCode)} > Been Here! </button>
+        
         {
           this.props.state.latLong ? 
             <GoogleMap state={this.props.state} style={{width:"75%", height: "auto", marginTop:'50px'}} />
