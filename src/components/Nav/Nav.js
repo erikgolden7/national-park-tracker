@@ -46,6 +46,12 @@ export default class Nav extends Component {
                 <div> Favorites </div>
               </Link>
               : '' }
+            {this.state.user.id ?
+              <Link to="/favoriteMap" className="nav-item link-3">
+                <div className="map-icon"></div>
+                <div> Favorite Map </div>
+              </Link>
+              : '' }
           </div>
           
           <div className="nav-right">

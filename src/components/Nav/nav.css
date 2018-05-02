@@ -49,7 +49,7 @@
   font-size: 20px;
 }
 
-.favorite-icon, .park-icon, .history-icon, .badge-icon {
+.favorite-icon, .park-icon, .history-icon, .badge-icon, .earth-icon, .map-icon {
   width: 26px;
   height: 26px;
 }
@@ -63,12 +63,12 @@
 }
 
 .favorite-icon {
-  background: url('../../assets/nav/favorites.png') center center no-repeat;
+  background: url('../../assets/nav/fav.png') center center no-repeat;
   background-size: contain;
 }
 
 .park-icon {
-  background: url('../../assets/nav/parks.png') center center no-repeat;
+  background: url('../../assets/nav/search-park.png') center center no-repeat;
   background-size: contain;
 }
 
@@ -82,6 +82,16 @@
   background-size: contain;
 }
 
+.earth-icon {
+  background: url('../../assets/nav/earth.png') center center no-repeat;
+  background-size: contain;
+}
+
+.map-icon {
+  background: url('../../assets/nav/map.png') center center no-repeat;
+  background-size: contain;
+}
+
 .login-btn {
   padding: 4px 8px;
   font-size: 14px;
@@ -89,7 +99,6 @@
   margin: 0 15px 0 25px;
   cursor: pointer;
 }
-
 
 
 

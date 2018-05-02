@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
-
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url(https://fonts.googleapis.com/css?family=Abel);
 
 .desc-body {
   padding: 20px;
@@ -93,16 +94,76 @@
   cursor: pointer;
 }
 
-.favorite {
-    background: url(/static/media/favorite.99fa41db.jpg) center center no-repeat;
-    background-size: contain;
-    height: 60px;
-    width: 60px;
-    margin: auto;
-    cursor: pointer;
+
+
+
+.icon{
+  height:80px;
+  width:100%;
+  text-align:center;
+  padding-top:15px;
 }
 
-.favorite:hover {
-  border-radius: 50%;
-  border: solid red 1px; 
+.button{
+  display:inline-block;
+  width: 70px;
+	height: 70px;
+	border-radius: 50%;
+  margin: auto;
+  text-align:center;
+  cursor:pointer;
+}
+
+.button:after{
+  display:inline-block;
+  position:relative;
+	border-radius: 50%; 
+  content:'';
+  box-sizing:content-box;
+  backface-visibility: hidden;
+}
+.button:before{
+  position:relative;
+  display:block;
+  font-family: 'FontAwesome', sans-serif;
+  font-size:1.6rem;
+  z-index :1;
+  line-height:90px;
+}
+
+.fontawesome-heart{
+  box-shadow:0 0 0 3px white;
+}
+
+.fontawesome-heart:after{
+  width: 50px;
+  height: 50px;
+  top: -72px;
+  background:rgb(221, 66, 66);
+  transition:transform .2s;
+}
+
+.fontawesome-heart:before{
+  color:white;
+}
+
+.fontawesome-heart:hover:after{
+    transform:scale(.85);
+}
+
+
+
+@keyframes ripple{
+  0% {
+		opacity: 0.3;
+	}
+	40% {
+		opacity: 0.5;
+		box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px #52292A, 0 0 0 10px rgba(255,255,255,0.5);
+	}
+	100% {
+		box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px #52292A, 0 0 0 10px rgba(255,255,255,0.5);
+		transform: scale(1.2);
+		opacity: 0;
+	}
 }

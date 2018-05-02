@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import FavoriteMap from './FavoriteMap/FavoriteMap'
 const axios = require('axios')
 
 class Favorites extends Component {
@@ -33,7 +32,7 @@ componentDidMount() {
     
     return (
       <div>
-        <FavoriteMap favorite={this.state.favorite}/>
+        {favorite}
       </div>
     );
   }

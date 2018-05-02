@@ -3,6 +3,7 @@ import HomePage from './HomePage/HomePage'
 import ParkSearch from './ParkSearch/ParkSearch'
 import Badges from './Badges/Badges'
 import Favorites from './Favorites/Favorites'
+import FavoriteMap from './Favorites/FavoriteMap/FavoriteMap'
 import ParkHistory from './ParkHistory/ParkHistory'
 import NotFound from './NotFound/NotFound'
 import {Switch, Route} from 'react-router-dom'
@@ -32,6 +33,7 @@ class App extends Component {
           <Route path='/search' component={ParkSearch} />
           <Route path='/badges' component={Badges} />
           <Route path='/favorites' component={Favorites} />
+          <Route path='/favoriteMap' component={FavoriteMap} />
           <Route path='*' component={NotFound} />
         </Switch>
       </div>

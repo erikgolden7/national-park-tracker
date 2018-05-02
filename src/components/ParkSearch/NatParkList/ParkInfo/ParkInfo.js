@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ParkAlerts from "./ParkAlerts"
 import axios from "axios";
-import GoogleMap from "./GoogleMap/GoogleMap"
+import InfoMap from "./InfoMap/InfoMap"
 import "./parkInfo.css"
 
 export default class ParkInfo extends Component {
@@ -85,14 +85,19 @@ export default class ParkInfo extends Component {
         }
         {
           this.state.user.auth_id ?
-          <div className="favorite" onClick={() => this.visitPark(latLong, name, parkCode)} />
+
+            <div class = "icon">
+              <div class="fontawesome-heart button" onClick={() => this.visitPark(latLong, name, parkCode)} />
+            </div>
+
+          
           : ''
         }
         <button className="back-btn" onClick={this.props.select} > ⬅ Back </button>
         
         {
           this.props.state.latLong ? 
-            <GoogleMap state={this.props.state} style={{width:"75%", height: "auto", marginTop:'50px'}} />
+            <InfoMap state={this.props.state} style={{width:"75%", height: "auto", marginTop:'50px'}} />
           :
           ''
         }
