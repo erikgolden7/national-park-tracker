@@ -114,24 +114,20 @@ class InfoMap extends Component {
 
   findLatLong(){
     const str = this.props.state.latLong
-    console.log(str);
-    
     let lat = str.slice(str.indexOf('lat:')+4, 15)
     let lng = str.slice(str.indexOf('long:')+5)
-    // lat = str.splice(4, 10);
-    // lng = str.splice(14, 11);
     this.setState({lat: Number(lat), lng: Number(lng)})
   }
 
    render() {
-    console.log(this.state.lat, this.state.lng);
-      
+     const {lat, lng} = this.state
+
     const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
-      defaultZoom={12}
-      defaultCenter={{ lat: this.state.lat, lng: this.state.lng }}
+      defaultZoom={10}
+      defaultCenter={{lat, lng}}
     >
-      {props.isMarkerShown && <Marker position={{ lat: this.state.lat, lng: this.state.lng }} />}
+      {props.isMarkerShown && <Marker position={{lat, lng}} />}
     </GoogleMap>
   ))
     

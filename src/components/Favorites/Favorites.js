@@ -11,6 +11,10 @@ constructor(props) {
 }
 
 componentDidMount() {
+  if(!this.props.isAuthed){
+    window.location.href = process.env.REACT_APP_LOGIN
+  }
+
   axios.get('/auth/me').then( res => {
     const id = res.data[0].auth_id
     axios.get(`/api/favorite/${id}`).then((res) => {
@@ -20,7 +24,7 @@ componentDidMount() {
 }
 
   render() {
-    console.log(this.state.favorite);
+    console.log(this.props.isAuthed);
 
     const favorite = this.state.favorite.map((e, i) => {
       return (

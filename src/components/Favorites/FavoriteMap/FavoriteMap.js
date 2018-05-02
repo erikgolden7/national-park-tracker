@@ -21,21 +21,22 @@ class GoogleMap extends Component {
   }
 
   componentWillMount() {
+    if(!this.props.isAuthed){
+      window.location.href = process.env.REACT_APP_LOGIN
+    }
+
     axios.get('/auth/me').then( res => {
       const id = res.data[0].auth_id
       axios.get(`/api/favorite/${id}`).then((res) => {
         this.setState({favorite: res.data})
       })
     })
-    
   }
 
   findLatLong(coordinate){
-      let tempLat = coordinate.split('').splice(4, 8)
-      let tempLng = coordinate.split('').splice(22, 9)
-      let lat = Number(tempLat.join(''))
-      let lng = Number(tempLng.join(''))
-      return {lat, lng}
+    let lat = coordinate.slice(coordinate.indexOf('lat:')+4, 15)
+    let lng = coordinate.slice(coordinate.indexOf('long:')+5)
+    return {lat, lng}
   }
 
   onMarkerClick = (props, marker, e) =>{

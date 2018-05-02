@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import HomePage from './HomePage/HomePage'
 import ParkSearch from './ParkSearch/ParkSearch'
 import Badges from './Badges/Badges'
@@ -14,10 +15,17 @@ class App extends Component {
     super(props)
 
     this.state = {
-      parks: []
+      parks: [],
+      user: {}
     }
 
     this.stateParks = this.stateParks.bind(this)
+  }
+
+  componentDidMount() {
+    axios.get('/auth/me').then( res => {
+      this.setState({user: res.data[0]})
+    })
   }
 
   stateParks (parks) {
@@ -29,11 +37,11 @@ class App extends Component {
       <div className='App'>
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route path='/history' component={ParkHistory} />
-          <Route path='/search' component={ParkSearch} />
-          <Route path='/badges' component={Badges} />
-          <Route path='/favorites' component={Favorites} />
-          <Route path='/favoriteMap' component={FavoriteMap} />
+          <Route path='/history' render={(props) => <ParkHistory {...props} isAuthed={this.state.user.id ? true : false} user={this.state.user} />}/>
+          <Route path='/search' render={(props) => <ParkSearch {...props} isAuthed={this.isAuthed} user={this.state.user} />}/>
+          <Route path='/badges' render={(props) => <Badges {...props} isAuthed={this.state.user.id ? true : false} user={this.state.user} />}/>
+          <Route path='/favorites' render={(props) => <Favorites {...props} isAuthed={this.state.user.id ? true : false} user={this.state.user} />}/>
+          <Route path='/favoriteMap' render={(props) => <FavoriteMap {...props} isAuthed={this.state.user.id ? true : false} user={this.state.user} />}/>
           <Route path='*' component={NotFound} />
         </Switch>
       </div>

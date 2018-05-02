@@ -10,7 +10,8 @@ export default class ParkInfo extends Component {
     
     this.state = {
       alerts: [],
-      user: {}
+      user: {},
+      favorites: []
     }
   }
   
@@ -23,6 +24,9 @@ export default class ParkInfo extends Component {
 
     axios.get('/auth/me').then( res => {
       this.setState({user: res.data[0]})
+      axios.get(`/api/favorite/${res.data[0]}`).then((res) => {
+        this.setState({favorites: res.data})
+      })
     })
   }
 
@@ -33,8 +37,6 @@ export default class ParkInfo extends Component {
   }
 
   render() {
-    console.log(this.state.user);
-    
     const {description, latLong, name, parkCode, states, url, weatherInfo} = this.props.state;
     
     const alert = this.state.alerts.map((e, i) => {  
