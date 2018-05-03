@@ -8,13 +8,13 @@
   flex-direction: column;
   justify-content: space-between;
   height: auto;
-  width: 29%;
+  width: 29.46%;
   border: solid black 0.5px;
   border-radius: 3px;
   box-shadow: 2px 2px 6px #888888;
   background: lightgray;
-  padding: 1.5%;
-  margin: 0.63%;
+  padding: 1.2%;
+  margin: 0.7%;
   text-align: left;
 }
 
@@ -32,4 +32,8 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
+}
+
+.fav-info {
+  padding: 6px 0;
 }

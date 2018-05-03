@@ -19,26 +19,22 @@ module.exports = {
 
   getUserHistory: (req, res, next) => {
     const db = req.app.get("db");
-    db.get_favorites([ req.params.id ]).then( response => {
-      return res.status(200).send(response)
-    });
+    db.get_favorites([ req.params.id ]).then( response => res.status(200).send(response))
+    .catch(err => res.status(500).send(err));
   },
   
   addFavorite: (req, res) => {
+    const {fullName, latLong, parkCode, url, description, states} = req.body;
     const db = req.app.get("db");
-    db.add_favorite([req.user[0].auth_id, req.body.name, req.body.latLong, req.body.parkCode, req.body.url, req.body.description]).then( response => {
-      return res.status(200).send(response)
-    });
+    db.add_favorite([req.user[0].auth_id, fullName, latLong, parkCode, url, description, states])
+    .then( response => res.status(200).send(response))
+    .catch(err => res.status(500).send(err));
   },
 
   removeFavorite: (req, res) => {
-    console.log(req.query.id, req.query.parkCode);
-    
-
     const db = req.app.get("db");
     db.remove_favorite([req.query.id, req.query.parkCode])
-    .then(response => {
-      return res.status(200).send(response)
-    })
+    .then(response => res.status(200).send(response))
+    .catch(err => res.status(500).send(err))
   }
 }
