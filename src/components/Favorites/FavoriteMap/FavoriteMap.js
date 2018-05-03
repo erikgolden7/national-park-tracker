@@ -64,6 +64,7 @@ class GoogleMap extends Component {
         <Marker
           key={i}
           title={e.park_name}
+          url={e.url}
           position={this.findLatLong(e.coordinates)}
           onClick={this.onMarkerClick}
         />  
@@ -84,6 +85,7 @@ class GoogleMap extends Component {
           visible={this.state.showingInfoWindow}>
             <div>
               <h3>{this.state.selectedPlace.title}</h3>
+              <a style={{color:"darkBlue"}} target="_blank" href={this.state.selectedPlace.url}>{this.state.selectedPlace.url}</a> 
             </div>
         </InfoWindow>
       </Map>

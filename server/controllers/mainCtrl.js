@@ -26,8 +26,19 @@ module.exports = {
   
   addFavorite: (req, res) => {
     const db = req.app.get("db");
-    db.add_favorite([req.user[0].auth_id, req.body.name, req.body.latLong, req.body.parkCode]).then( response => {
+    db.add_favorite([req.user[0].auth_id, req.body.name, req.body.latLong, req.body.parkCode, req.body.url, req.body.description]).then( response => {
       return res.status(200).send(response)
     });
+  },
+
+  removeFavorite: (req, res) => {
+    console.log(req.query.id, req.query.parkCode);
+    
+
+    const db = req.app.get("db");
+    db.remove_favorite([req.query.id, req.query.parkCode])
+    .then(response => {
+      return res.status(200).send(response)
+    })
   }
 }

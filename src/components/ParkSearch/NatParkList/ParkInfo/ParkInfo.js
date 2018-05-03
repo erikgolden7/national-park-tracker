@@ -27,7 +27,7 @@ export default class ParkInfo extends Component {
     })
   }
 
-  visitPark(latLong, name, parkCode) {
+  visitPark(latLong, name, parkCode, url, description) {
     axios.get(`/api/favorite/${this.props.user.auth_id}`).then((res) => {
       
       let favDouble = false;
@@ -41,14 +41,12 @@ export default class ParkInfo extends Component {
         alert("already exists")
       }
       else {
-        axios.post('api/addFavorite', {latLong, name, parkCode})
+        axios.post('api/addFavorite', {latLong, name, parkCode, url, description})
       }
     })
   }
 
   render() {
-    console.log(this.props.user);
-    
     const {description, latLong, name, parkCode, states, url, weatherInfo} = this.props.state;
     
     const alert = this.state.alerts.map((e, i) => {  
@@ -99,16 +97,12 @@ export default class ParkInfo extends Component {
         }
         {
           this.props.user.auth_id ?
-
-            <div class = "icon">
-              <div class="fontawesome-heart button" onClick={() => this.visitPark(latLong, name, parkCode)} />
-            </div>
-
-          
+          <div class = "icon">
+            <div class="fontawesome-heart button" onClick={() => this.visitPark(latLong, name, parkCode, url, description)} />
+          </div>
           : ''
         }
         <button className="back-btn" onClick={this.props.select} > ⬅ Back </button>
-        
         {
           this.props.state.latLong ? 
             <InfoMap state={this.props.state} style={{width:"75%", height: "auto", marginTop:'50px'}} />

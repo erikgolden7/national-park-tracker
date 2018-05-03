@@ -1,0 +1,25 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fav-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  width: 30.34%;
+  border: solid black 0.5px;
+  background: lightgray;
+  padding: 0.7%;
+  margin: 0.7%;
+}
+
+.delete {
+  background: url('../../assets/delete.png') center center no-repeat;
+  background-size: contain;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
