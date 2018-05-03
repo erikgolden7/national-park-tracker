@@ -1,65 +1,62 @@
-import React, { Component } from 'react';
-import {Map, Marker, GoogleApiWrapper, InfoWindow} from 'google-maps-react';
-import axios from "axios"
-require('dotenv').config()
+import React, { Component } from "react";
+import { Map, Marker, GoogleApiWrapper, InfoWindow } from "google-maps-react";
+import axios from "axios";
+require("dotenv").config();
 
-const LoadingContainer = (props) => (
-  <div>Loading...</div>
-)
+const LoadingContainer = props => <div>Loading...</div>;
 class GoogleMap extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
-      favorite : [],
+      favorite: [],
       coordinates: [],
       zoom: 5,
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {}
-    }
+    };
   }
 
   componentWillMount() {
-    if(!this.props.isAuthed){
-      window.location.href = process.env.REACT_APP_LOGIN
+    if (!this.props.isAuthed) {
+      window.location.href = process.env.REACT_APP_LOGIN;
     }
-    axios.get(`/api/favorite/${this.props.user.auth_id}`).then((res) => {
-      this.setState({favorite: res.data})
-    })
+    axios.get(`/api/favorite/${this.props.user.auth_id}`).then(res => {
+      this.setState({ favorite: res.data });
+    });
   }
 
-  findLatLong(coordinate){
-    let lat = coordinate.slice(coordinate.indexOf('lat:')+4, 15)
-    let lng = coordinate.slice(coordinate.indexOf('long:')+5)
-    return {lat, lng}
+  findLatLong(coordinate) {
+    let lat = coordinate.slice(coordinate.indexOf("lat:") + 4, 15);
+    let lng = coordinate.slice(coordinate.indexOf("long:") + 5);
+    return { lat, lng };
   }
 
-  onMarkerClick = (props, marker, e) =>{
+  onMarkerClick = (props, marker, e) => {
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
       showingInfoWindow: true
     });
-  }
+  };
 
-  onMapClicked = (props) => {
+  onMapClicked = props => {
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
         activeMarker: null
-      })
+      });
     }
   };
 
   render() {
-
     const style = {
-      width: '100%',
-      height: '100vh'
-    }
+      width: "100%",
+      height: "100vh"
+    };
 
-    const marker = this.state.favorite.map((e,i)=>{
+    const marker = this.state.favorite.map((e, i) => {
       return (
         <Marker
           key={i}
@@ -67,26 +64,33 @@ class GoogleMap extends Component {
           url={e.url}
           position={this.findLatLong(e.coordinates)}
           onClick={this.onMarkerClick}
-        />  
-      )
-    })
+        />
+      );
+    });
 
     return (
-      <Map 
-        google={this.props.google} 
-        zoom={this.state.zoom} 
-        style={style} 
-        initialCenter={{lat: 38.0902,lng: -95.7129}} 
-        onClick={this.onMapClicked} 
+      <Map
+        google={this.props.google}
+        zoom={this.state.zoom}
+        style={style}
+        initialCenter={{ lat: 38.0902, lng: -95.7129 }}
+        onClick={this.onMapClicked}
       >
         {marker}
         <InfoWindow
           marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}>
-            <div>
-              <h3>{this.state.selectedPlace.title}</h3>
-              <a style={{color:"darkBlue"}} target="_blank" href={this.state.selectedPlace.url}>{this.state.selectedPlace.url}</a> 
-            </div>
+          visible={this.state.showingInfoWindow}
+        >
+          <div>
+            <h3>{this.state.selectedPlace.title}</h3>
+            <a
+              style={{ color: "darkBlue" }}
+              target="_blank"
+              href={this.state.selectedPlace.url}
+            >
+              {this.state.selectedPlace.url}
+            </a>
+          </div>
         </InfoWindow>
       </Map>
     );
@@ -96,12 +100,7 @@ class GoogleMap extends Component {
 export default GoogleApiWrapper({
   apiKey: process.env.REACT_APP_MAP_KEY,
   LoadingContainer: LoadingContainer
-})(GoogleMap)
-
-
-
-
-
+})(GoogleMap);
 
 // import React, { Component } from 'react';
 // import axios from 'axios'
@@ -111,7 +110,7 @@ export default GoogleApiWrapper({
 // class HistoryMap extends Component {
 //   constructor(props) {
 //     super(props);
-    
+
 //     this.state = {
 //       history : [],
 //       isOpen: false
@@ -128,7 +127,7 @@ export default GoogleApiWrapper({
 //       })
 //     })
 //   }
-    
+
 //   findLatLong(coordinate){
 //       let tempLat = coordinate.split('').splice(4, 8)
 //       let tempLng = coordinate.split('').splice(22, 9)
@@ -139,7 +138,7 @@ export default GoogleApiWrapper({
 
 //   onToggleOpen() {
 //     console.log("toggle fired");
-    
+
 //     this.setState({isOpen: !this.state.isOpen})
 //   }
 
@@ -156,7 +155,7 @@ export default GoogleApiWrapper({
 //         {this.state.isOpen && <InfoWindow onCloseClick={this.onToggleOpen}>
 //           <FaAnchor />
 //         </InfoWindow>}
-//         </Marker>  
+//         </Marker>
 //       )
 //     })
 
@@ -185,4 +184,3 @@ export default GoogleApiWrapper({
 // }
 
 // export default HistoryMap
-

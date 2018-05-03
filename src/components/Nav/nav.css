@@ -49,13 +49,18 @@
   font-size: 20px;
 }
 
-.favorite-icon, .park-icon, .history-icon, .badge-icon, .earth-icon, .map-icon {
+.favorite-icon,
+.park-icon,
+.history-icon,
+.badge-icon,
+.earth-icon,
+.map-icon {
   width: 26px;
   height: 26px;
 }
 
 .app-logo {
-  background: url('../../assets/nav/np-logo.png') center center no-repeat;
+  background: url("../../assets/nav/np-logo.png") center center no-repeat;
   background-size: contain;
   height: 50px;
   width: 230px;
@@ -63,32 +68,32 @@
 }
 
 .favorite-icon {
-  background: url('../../assets/nav/fav.png') center center no-repeat;
+  background: url("../../assets/nav/fav.png") center center no-repeat;
   background-size: contain;
 }
 
 .park-icon {
-  background: url('../../assets/nav/search-park.png') center center no-repeat;
+  background: url("../../assets/nav/search-park.png") center center no-repeat;
   background-size: contain;
 }
 
 .history-icon {
-  background: url('../../assets/nav/history.png') center center no-repeat;
+  background: url("../../assets/nav/history.png") center center no-repeat;
   background-size: contain;
 }
 
 .badge-icon {
-  background: url('../../assets/nav/badge.png') center center no-repeat;
+  background: url("../../assets/nav/badge.png") center center no-repeat;
   background-size: contain;
 }
 
 .earth-icon {
-  background: url('../../assets/nav/earth.png') center center no-repeat;
+  background: url("../../assets/nav/earth.png") center center no-repeat;
   background-size: contain;
 }
 
 .map-icon {
-  background: url('../../assets/nav/map.png') center center no-repeat;
+  background: url("../../assets/nav/map.png") center center no-repeat;
   background-size: contain;
 }
 
@@ -99,8 +104,3 @@
   margin: 0 15px 0 25px;
   cursor: pointer;
 }
-
-
-
-
-

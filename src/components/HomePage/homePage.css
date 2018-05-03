@@ -1,5 +1,5 @@
 .park-img {
-  background: url('../../assets/weAreParks.jpg') center center no-repeat;
+  background: url("../../assets/weAreParks.jpg") center center no-repeat;
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -8,13 +8,13 @@
 .arrow {
   width: 70px;
   height: 70px;
-  background: url('../../assets/arrow.png') center center no-repeat;
+  background: url("../../assets/arrow.png") center center no-repeat;
   background-size: contain;
   margin: auto;
   padding-top: 160vh;
 }
 
-.main-title{
+.main-title {
   color: #2d2d2d;
   text-align: center;
   text-transform: capitalize;
@@ -36,25 +36,25 @@
   color: white;
 }
 
-.container{
+.container {
   padding: 1em 0;
   float: left;
   width: 50%;
 }
-@media screen and (max-width: 640px){
-  .container{
+@media screen and (max-width: 640px) {
+  .container {
     display: block;
     width: 100%;
   }
 }
 
-@media screen and (min-width: 900px){
-  .container{
+@media screen and (min-width: 900px) {
+  .container {
     width: 25%;
   }
 }
 
-.container .title{
+.container .title {
   color: #1a1a1a;
   text-align: center;
   margin-bottom: 10px;
@@ -69,7 +69,7 @@
 }
 
 .content .content-overlay {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   position: absolute;
   height: 99%;
   width: 100%;
@@ -83,11 +83,11 @@
   transition: all 0.4s ease-in-out 0s;
 }
 
-.content:hover .content-overlay{
+.content:hover .content-overlay {
   opacity: 1;
 }
 
-.content-image{
+.content-image {
   width: 100%;
 }
 
@@ -104,13 +104,13 @@
   transition: all 0.3s ease-in-out 0s;
 }
 
-.content:hover .content-details{
+.content:hover .content-details {
   top: 50%;
   left: 50%;
   opacity: 1;
 }
 
-.content-details h3{
+.content-details h3 {
   color: #fff;
   font-weight: 500;
   letter-spacing: 0.15em;
@@ -119,23 +119,23 @@
   padding: 15px;
 }
 
-.content-details p{
+.content-details p {
   color: #fff;
   font-size: 0.8em;
 }
 
-.fadeIn-bottom{
+.fadeIn-bottom {
   top: 80%;
 }
 
-.fadeIn-top{
+.fadeIn-top {
   top: 20%;
 }
 
-.fadeIn-left{
+.fadeIn-left {
   left: 20%;
 }
 
-.fadeIn-right{
+.fadeIn-right {
   left: 80%;
 }

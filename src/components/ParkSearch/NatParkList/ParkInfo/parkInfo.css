@@ -11,7 +11,7 @@
 .alert {
   padding: 3px;
   background: #671107;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   width: auto;
   max-width: 180px;
   font-size: 24px;
@@ -20,29 +20,35 @@
   margin-bottom: 10px;
 }
 
-.danger, .caution, .info, .closed {
+.danger,
+.caution,
+.info,
+.closed {
   height: 28px;
   width: 28px;
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 .danger {
-  background: url('../../../../assets/alerts/danger.png') center center no-repeat;
+  background: url("../../../../assets/alerts/danger.png") center center
+    no-repeat;
   background-size: contain;
 }
 
 .caution {
-  background: url('../../../../assets/alerts/caution.png') center center no-repeat;
+  background: url("../../../../assets/alerts/caution.png") center center
+    no-repeat;
   background-size: contain;
 }
 
 .info {
-  background: url('../../../../assets/alerts/info.png') center center no-repeat;
+  background: url("../../../../assets/alerts/info.png") center center no-repeat;
   background-size: contain;
 }
 
 .closed {
-  background: url('../../../../assets/alerts/closed.png') center center no-repeat;
+  background: url("../../../../assets/alerts/closed.png") center center
+    no-repeat;
   background-size: contain;
 }
 
@@ -65,7 +71,7 @@
 }
 
 .large-title-text {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 35px;
   font-weight: 500;
   line-height: 46px;
@@ -82,7 +88,7 @@
   margin: 20px 0;
 }
 
-.back-btn{
+.back-btn {
   font-size: 16px;
   font-weight: bold;
   background: rgb(56, 56, 56);
@@ -94,76 +100,73 @@
   cursor: pointer;
 }
 
-
-
-
-.icon{
-  height:80px;
-  width:100%;
-  text-align:center;
-  padding-top:15px;
+.icon {
+  height: 80px;
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
 }
 
-.button{
-  display:inline-block;
+.button {
+  display: inline-block;
   width: 70px;
-	height: 70px;
-	border-radius: 50%;
+  height: 70px;
+  border-radius: 50%;
   margin: auto;
-  text-align:center;
-  cursor:pointer;
+  text-align: center;
+  cursor: pointer;
 }
 
-.button:after{
-  display:inline-block;
-  position:relative;
-	border-radius: 50%; 
-  content:'';
-  box-sizing:content-box;
+.button:after {
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  content: "";
+  box-sizing: content-box;
   backface-visibility: hidden;
 }
-.button:before{
-  position:relative;
-  display:block;
-  font-family: 'FontAwesome', sans-serif;
-  font-size:1.6rem;
-  z-index :1;
-  line-height:90px;
+.button:before {
+  position: relative;
+  display: block;
+  font-family: "FontAwesome", sans-serif;
+  font-size: 1.6rem;
+  z-index: 1;
+  line-height: 90px;
 }
 
-.fontawesome-heart{
-  box-shadow:0 0 0 3px white;
+.fontawesome-heart {
+  box-shadow: 0 0 0 3px white;
 }
 
-.fontawesome-heart:after{
+.fontawesome-heart:after {
   width: 50px;
   height: 50px;
   top: -72px;
-  background:rgb(221, 66, 66);
-  transition:transform .2s;
+  background: rgb(221, 66, 66);
+  transition: transform 0.2s;
 }
 
-.fontawesome-heart:before{
-  color:white;
+.fontawesome-heart:before {
+  color: white;
 }
 
-.fontawesome-heart:hover:after{
-    transform:scale(.85);
+.fontawesome-heart:hover:after {
+  transform: scale(0.85);
 }
 
-
-
-@keyframes ripple{
+@keyframes ripple {
   0% {
-		opacity: 0.3;
-	}
-	40% {
-		opacity: 0.5;
-		box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px #52292A, 0 0 0 10px rgba(255,255,255,0.5);
-	}
-	100% {
-		box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px #52292A, 0 0 0 10px rgba(255,255,255,0.5);
-		transform: scale(1.2);
-		opacity: 0;
-	}
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #52292a,
+      0 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #52292a,
+      0 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: scale(1.2);
+    opacity: 0;
+  }
 }

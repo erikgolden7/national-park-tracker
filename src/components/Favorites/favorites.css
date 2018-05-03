@@ -19,7 +19,7 @@
 }
 
 .delete {
-  background: url('../../assets/delete.png') center center no-repeat;
+  background: url("../../assets/delete.png") center center no-repeat;
   background-size: contain;
   width: 22px;
   height: 22px;
