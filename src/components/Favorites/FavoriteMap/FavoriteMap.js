@@ -24,12 +24,8 @@ class GoogleMap extends Component {
     if(!this.props.isAuthed){
       window.location.href = process.env.REACT_APP_LOGIN
     }
-
-    axios.get('/auth/me').then( res => {
-      const id = res.data[0].auth_id
-      axios.get(`/api/favorite/${id}`).then((res) => {
-        this.setState({favorite: res.data})
-      })
+    axios.get(`/api/favorite/${this.props.user.auth_id}`).then((res) => {
+      this.setState({favorite: res.data})
     })
   }
 
@@ -64,7 +60,6 @@ class GoogleMap extends Component {
     }
 
     const marker = this.state.favorite.map((e,i)=>{
-      console.log(e);
       return (
         <Marker
           key={i}

@@ -70,7 +70,7 @@ export default class ParkSearch extends Component {
           :
           <UsMap listSelect={this.listToggle} select={this.selectMap} toggle={toggle} listToggle={listToggle} setParks={this.stateParks} state={state}setSelectedState={this.setSelectedState} clearParks={this.clearParks}/>
         }
-        <NatParkList select={this.setToggle} toggle={toggle} listToggle={listToggle} parkList={parks} selectPark={this.selectPark} state={state} selectedState={selectedState} />
+        <NatParkList user={this.props.user} select={this.setToggle} toggle={toggle} listToggle={listToggle} parkList={parks} selectPark={this.selectPark} state={state} selectedState={selectedState} />
       </div>
     );
   }

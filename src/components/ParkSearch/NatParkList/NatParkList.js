@@ -33,7 +33,7 @@ export default class NatParkList extends Component {
           !this.props.toggle && !this.props.listToggle 
           ?
           <div>
-            <ParkInfo select={this.props.select} state={this.props.state}/>
+            <ParkInfo user={this.props.user} select={this.props.select} state={this.props.state}/>
           </div>
           :
           <div className="list-desc">Select a state from the map above to view list of parks ⇧</div>

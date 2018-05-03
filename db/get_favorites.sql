@@ -1,3 +1,3 @@
 SELECT *
-FROM history
+FROM favorites
 WHERE auth_id = $1

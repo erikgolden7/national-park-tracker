@@ -19,14 +19,14 @@ module.exports = {
 
   getUserHistory: (req, res, next) => {
     const db = req.app.get("db");
-    db.get_user_history([ req.params.id ]).then( response => {
+    db.get_favorites([ req.params.id ]).then( response => {
       return res.status(200).send(response)
     });
   },
   
-  visitPark: (req, res) => {
+  addFavorite: (req, res) => {
     const db = req.app.get("db");
-    db.add_visit_park([req.user[0].auth_id, req.body.name, req.body.latLong, req.body.parkCode]).then( response => {
+    db.add_favorite([req.user[0].auth_id, req.body.name, req.body.latLong, req.body.parkCode]).then( response => {
       return res.status(200).send(response)
     });
   }

@@ -33,15 +33,16 @@ class App extends Component {
   }
 
   render () {
+    const {user} = this.state;
     return (
       <div className='App'>
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route path='/history' render={(props) => <ParkHistory {...props} isAuthed={this.state.user.id ? true : false} user={this.state.user} />}/>
+          <Route path='/history' render={(props) => <ParkHistory {...props} isAuthed={user.id ? true : false} user={user} />}/>
           <Route path='/search' render={(props) => <ParkSearch {...props} isAuthed={this.isAuthed} user={this.state.user} />}/>
-          <Route path='/badges' render={(props) => <Badges {...props} isAuthed={this.state.user.id ? true : false} user={this.state.user} />}/>
-          <Route path='/favorites' render={(props) => <Favorites {...props} isAuthed={this.state.user.id ? true : false} user={this.state.user} />}/>
-          <Route path='/favoriteMap' render={(props) => <FavoriteMap {...props} isAuthed={this.state.user.id ? true : false} user={this.state.user} />}/>
+          <Route path='/badges' render={(props) => <Badges {...props} isAuthed={user.id ? true : false} user={user} />}/>
+          <Route path='/favorites' render={(props) => <Favorites {...props} isAuthed={user.id ? true : false} user={user} />}/>
+          <Route path='/favoriteMap' render={(props) => <FavoriteMap {...props} isAuthed={user.id ? true : false} user={user} />}/>
           <Route path='*' component={NotFound} />
         </Switch>
       </div>
