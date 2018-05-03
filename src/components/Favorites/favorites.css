@@ -1,7 +1,6 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .fav-card {
@@ -9,11 +8,14 @@
   flex-direction: column;
   justify-content: space-between;
   height: auto;
-  width: 30.34%;
+  width: 29%;
   border: solid black 0.5px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 6px #888888;
   background: lightgray;
-  padding: 0.7%;
-  margin: 0.7%;
+  padding: 1.5%;
+  margin: 0.63%;
+  text-align: left;
 }
 
 .delete {
@@ -22,4 +24,12 @@
   width: 22px;
   height: 22px;
   cursor: pointer;
+}
+
+.card-header {
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
 }

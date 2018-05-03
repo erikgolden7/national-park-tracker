@@ -34,12 +34,13 @@ export default class Nav extends Component {
                 <div> Park History </div>
               </Link>
               : '' }
-            {this.state.user.id ?
+            {/*{this.state.user.id ?
               <Link to="/badges" className="nav-item link-3">
                 <div className="badge-icon"></div>
                 <div> Junior Ranger </div>
               </Link>
               : '' }
+            */}
             {this.state.user.id ?
               <Link to="/favorites" className="nav-item link-3">
                 <div className="favorite-icon"></div>

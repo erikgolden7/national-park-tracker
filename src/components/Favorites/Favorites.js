@@ -35,7 +35,7 @@ class Favorites extends Component {
       return (
         <div key={i} className="fav-card">
           
-          <div style={{fontSize:20, fontWeight:'bold', display:'flex', justifyContent:'space-between', paddingBottom: 20}}>
+          <div className="card-header">
             {e.park_name}
             <div className="delete" onClick={()=>this.removeFavorite(e.park_code)}/>
           </div>

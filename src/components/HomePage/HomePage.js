@@ -32,155 +32,42 @@ class HomePage extends Component {
     if (this.state.redirect) {
       return <Redirect push to="/search" />;
     }
+
+    const parks = [
+      {url:'https://www.nps.gov/drto/index.htm', img: tortugas, title:'Dry Tortugas National Park', state:'Florida'},{url:'https://www.nps.gov/yell/index.htm', img: yellowstone, title:'Yellowstone National Park', state:'Wyoming'},{url:'https://www.nps.gov/gumo/index.htm', img: guadalupe, title:'Guadalupe Mountains National Park', state:'Texas'},{url:'https://www.nps.gov/grsa/index.htm', img: sanddunes, title:'Great Sand Dunes National Park', state:'Colorado'},
+      {url:'https://www.nps.gov/noca/index.htm', img: cascades, title:'North Cascades National Park', state:'Washington'},
+      {url:'https://www.nps.gov/gaar/index.htm', img: gates, title:'Gates of the Arctic National Park', state:'Alaska'},
+      {url:'https://www.nps.gov/cong/index.htm', img: congaree, title:'Congaree National Park', state:'South Carolina'},
+      {url:'https://www.nps.gov/grba/index.htm', img: basin, title:'Great Basin National Park', state:'Nevada'},
+      {url:'https://www.nps.gov/chis/index.htm', img: channelislands, title:'Channel Islands National Park', state:'California'},
+      {url:'https://www.nps.gov/lavo/index.htm', img: lassen, title:'Lassen Volcanic National Park', state:'California'},
+      {url:'https://www.nps.gov/grca/index.htm', img: grandcanyon, title:'Grand Canyon National Park', state:'Arizona'},
+      {url:'https://www.nps.gov/isro/index.htm', img: royale, title:'Isle Royale National Park', state:'Michigan'}
+    ]
+
+    const preview = parks.map((e,i) => {
+      return (
+        <div className="container">
+          <div className="content">
+            <a href={e.url} rel="noopener noreferrer" target="_blank">
+              <div className="content-overlay" />
+              <img className="content-image" alt='park img' src={e.img} />
+              <div className="content-details fadeIn-bottom">
+                <h3 className="content-title">{e.title}</h3>
+                <p className="content-text">{e.state}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      )
+    })
+
     return (
       <div className='App'>
         <div className="park-img">
           <div className="arrow" />
         </div>
-        <div className="container">
-          <div className="content">
-            <a href="https://www.nps.gov/drto/index.htm" rel="noopener noreferrer" target="_blank">
-              <div className="content-overlay" />
-              <img className="content-image" alt='park img' src={tortugas} />
-              <div className="content-details fadeIn-bottom">
-                <h3 className="content-title">Dry Tortugas National Park</h3>
-                <p className="content-text">Florida</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="container">
-          <div className="content">
-            <a href="https://www.nps.gov/yell/index.htm" rel="noopener noreferrer" target="_blank">
-              <div className="content-overlay" />
-              <img className="content-image" alt='park img' src={yellowstone} />
-              <div className="content-details fadeIn-bottom">
-                <h3 className="content-title">Yellowstone National Park</h3>
-                <p className="content-text">Wyoming</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="container">
-          <div className="content">
-            <a href="https://www.nps.gov/gumo/index.htm" rel="noopener noreferrer" target="_blank">
-              <div className="content-overlay" />
-              <img className="content-image" alt='park img' src={guadalupe} />
-              <div className="content-details fadeIn-bottom">
-                <h3 className="content-title">Guadalupe Mountains National Park</h3>
-                <p className="content-text">Texas</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="container">
-          <div className="content">
-            <a href="https://www.nps.gov/grsa/index.htm" rel="noopener noreferrer" target="_blank">
-              <div className="content-overlay" />
-              <img className="content-image" alt='park img' src={sanddunes} />
-              <div className="content-details fadeIn-bottom">
-                <h3 className="content-title">Great Sand Dunes National Park</h3>
-                <p className="content-text">Colorado</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="container">
-          <div className="content">
-            <a href="https://www.nps.gov/noca/index.htm" rel="noopener noreferrer" target="_blank">
-              <div className="content-overlay" />
-              <img className="content-image" alt='park img' src={cascades} />
-              <div className="content-details fadeIn-bottom">
-                <h3 className="content-title">North Cascades National Park</h3>
-                <p className="content-text">Washington</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="container">
-          <div className="content">
-            <a href="https://www.nps.gov/gaar/index.htm" rel="noopener noreferrer" target="_blank">
-              <div className="content-overlay" />
-              <img className="content-image" alt='park img' src={gates} />
-              <div className="content-details fadeIn-bottom">
-                <h3 className="content-title">Gates of the Arctic National Park</h3>
-                <p className="content-text">Alaska</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="container">
-          <div className="content">
-            <a href="https://www.nps.gov/cong/index.htm" rel="noopener noreferrer" target="_blank">
-              <div className="content-overlay" />
-              <img className="content-image" alt='park img' src={congaree} />
-              <div className="content-details fadeIn-bottom">
-                <h3 className="content-title">Congaree National Park</h3>
-                <p className="content-text">South Carolina</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="container">
-          <div className="content">
-            <a href="https://www.nps.gov/grba/index.htm" rel="noopener noreferrer" target="_blank">
-              <div className="content-overlay" />
-              <img className="content-image" alt='park img' src={basin} />
-              <div className="content-details fadeIn-bottom">
-                <h3 className="content-title">Great Basin National Park</h3>
-                <p className="content-text">Nevada</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="container">
-          <div className="content">
-            <a href="https://www.nps.gov/chis/index.htm" rel="noopener noreferrer" target="_blank">
-              <div className="content-overlay" />
-              <img className="content-image" alt='park img' src={channelislands} />
-              <div className="content-details fadeIn-bottom">
-                <h3 className="content-title">Channel Islands National Park</h3>
-                <p className="content-text">California</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="container">
-          <div className="content">
-            <a href="https://www.nps.gov/lavo/index.htm" rel="noopener noreferrer" target="_blank">
-              <div className="content-overlay" />
-              <img className="content-image" alt='park img' src={lassen} />
-              <div className="content-details fadeIn-bottom">
-                <h3 className="content-title">Lassen Volcanic National Park</h3>
-                <p className="content-text">California</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="container">
-          <div className="content">
-            <a href="https://www.nps.gov/grca/index.htm" rel="noopener noreferrer" target="_blank">
-              <div className="content-overlay" />
-              <img className="content-image" alt='park img' src={grandcanyon} />
-              <div className="content-details fadeIn-bottom">
-                <h3 className="content-title">Grand Canyon National Park</h3>
-                <p className="content-text">Arizona</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="container">
-          <div className="content">
-            <a href="https://www.nps.gov/isro/index.htm" rel="noopener noreferrer" target="_blank">
-              <div className="content-overlay" />
-              <img className="content-image" alt='park img' src={royale} />
-              <div className="content-details fadeIn-bottom">
-                <h3 className="content-title">Isle Royale National Park</h3>
-                <p className="content-text">Michigan</p>
-              </div>
-            </a>
-          </div>
-        </div>
+        {preview}
         <button onClick={this.onButtonClick} type="button" className="show-btn">Explore More...</button>
       </div>
     )
