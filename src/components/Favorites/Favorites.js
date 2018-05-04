@@ -10,7 +10,6 @@ import {
 import IconButton from "material-ui/IconButton";
 import Delete from "material-ui/svg-icons/action/delete-forever";
 import "./favorites.css";
-import canyon from "../../assets/parks/canyonland.jpg";
 import banners from "../banners";
 
 class Favorites extends Component {

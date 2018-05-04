@@ -87,7 +87,7 @@ export default class ParkInfo extends Component {
         {parkCode && (
           <img
             src={banners[parkCode]}
-            alt="Park Image"
+            alt="Park"
             className="image-responsive"
           />
         )}

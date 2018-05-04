@@ -27,8 +27,6 @@ const banners = {
     "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/5C1DDF2C-1DD8-B71B-0B367FD41AA2D60B.jpg?width=2400&height=700&mode=crop&quality=90",
   anac:
     "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/20D7ECCC-1DD8-B71B-0B2B68C9415E82E0.jpg?width=2400&height=700&mode=crop&quality=90",
-  anti:
-    "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/F6E6C201-1DD8-B71B-0BFA608807233790.jpg?width=2400&height=700&mode=crop&quality=90",
   ande:
     "https://www.nps.gov/common/uploads/banner_image/akr/homepage/601CB9F5-1DD8-B71B-0BDE11B11B2FB066.JPG?width=2400&height=700&mode=crop&quality=90",
   ania:
@@ -323,8 +321,6 @@ const banners = {
     "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/9A51734D-1DD8-B71B-0B0FAE08B031784F.jpg?width=2400&height=700&mode=crop&quality=90",
   fost:
     "https://www.nps.gov/common/uploads/banner_image/ner/homepage/F00C555E-1DD8-B71B-0BAD63E4AE9B6BF3.jpg?width=2400&height=700&mode=crop&quality=90",
-  fosu:
-    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/E8D8F726-1DD8-B71B-0BDE218692A13035.jpg?width=2400&height=700&mode=crop&quality=90",
   foth:
     "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/2C93AE3B-1DD8-B71B-0BA2413299A2B612.jpg?width=2400&height=700&mode=crop&quality=90",
   foun:
@@ -367,8 +363,6 @@ const banners = {
     "https://www.nps.gov/common/uploads/banner_image/imr/homepage/341F1C66-1DD8-B71B-0BA06309690FF26B.jpg?width=2400&height=700&mode=crop&quality=90",
   glba:
     "https://www.nps.gov/common/uploads/banner_image/akr/homepage/CE2C26AD-1DD8-B71B-0B72E264E74BDAE6.jpg?width=2400&height=700&mode=crop&quality=90",
-  glca:
-    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/341F1C66-1DD8-B71B-0BA06309690FF26B.jpg?width=2400&height=700&mode=crop&quality=90",
   glec:
     "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/6A1BD80B-1DD8-B71B-0BC38D4E008597D6.jpg?width=2400&height=700&mode=crop&quality=90",
   goga:
@@ -447,6 +441,8 @@ const banners = {
     "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/E3833865-1DD8-B71B-0B64B392E28A5B81.jpg?width=2400&height=700&mode=crop&quality=90",
   hutr:
     "https://www.nps.gov/common/uploads/banner_image/imr/homepage/8B6A4C8E-1DD8-B71B-0BE6B280613116E8.JPG?width=2400&height=700&mode=crop&quality=90",
+  iafl:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/CF907A9A-1DD8-B71B-0BFB364780842D4F.jpg?width=2400&height=700&mode=crop&quality=90",
   inde:
     "https://www.nps.gov/common/uploads/banner_image/ner/homepage/7D81039F-1DD8-B71B-0BF460ABA070923F.jpg?width=2400&height=700&mode=crop&quality=90",
   indu:
@@ -515,6 +511,8 @@ const banners = {
     "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/575C3B44-1DD8-B71B-0BD879DB3BC0AD69.jpg?width=2400&height=700&mode=crop&quality=90",
   lacl:
     "https://www.nps.gov/common/uploads/banner_image/akr/homepage/91C63DB7-1DD8-B71B-0B20883FB5C0FC8F.jpg?width=2400&height=700&mode=crop&quality=90",
+  lecl:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/A0F79BF1-1DD8-B71B-0BAD39F8477A1E92.jpg?width=2400&height=700&mode=crop&quality=90",
   lake:
     "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/5B3E8027-1DD8-B71B-0BD9F5475884677A.jpg?width=2400&height=700&mode=crop&quality=90",
   lame:
@@ -719,6 +717,208 @@ const banners = {
     "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/ADD69E2D-1DD8-B71B-0B927B3E161D5FC0.jpg?width=2400&height=700&mode=crop&quality=90",
   pull:
     "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/5D2DF1D6-1DD8-B71B-0BB533F1BC37C059.jpg?width=2400&height=700&mode=crop&quality=90",
+  rabr:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/89B04D01-1DD8-B71B-0BE20CF1FD6E8406.jpg?width=2400&height=700&mode=crop&quality=90",
+  redw:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/0FBA9AF8-1DD8-B71B-0BF72F798FF5BC7E.jpg?width=2400&height=700&mode=crop&quality=90",
+  reer:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/65C463DD-1DD8-B71B-0B7D582AAE0FADB4.jpg?width=2400&height=700&mode=crop&quality=90",
+  rich:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/1E7EDE2B-1DD8-B71B-0B85606AAF2CF15F.jpg?width=2400&height=700&mode=crop&quality=90",
+  rigr:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/2B800006-1DD8-B71B-0B12EF22FF4F37B2.JPG?width=2400&height=700&mode=crop&quality=90",
+  rira:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/E27F94FB-1DD8-B71B-0BEBDA95815E3E29.jpg?width=2400&height=700&mode=crop&quality=90",
+  rocr:
+    "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/F2DADE64-1DD8-B71B-0B7065A6B5181CD4.JPG?width=2400&height=700&mode=crop&quality=90",
+  rola:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/575C3B44-1DD8-B71B-0BD879DB3BC0AD69.jpg?width=2400&height=700&mode=crop&quality=90",
+  romo:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/8E9F91A3-1DD8-B71B-0B763387D1AACB61.jpg?width=2400&height=700&mode=crop&quality=90",
+  rori:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/6ADCC690-1DD8-B71B-0BDBB2563033F677.jpg?width=2400&height=700&mode=crop&quality=90",
+  rowi:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/F2B39E80-1DD8-B71B-0BF6250AF17BD223.jpg?width=2400&height=700&mode=crop&quality=90",
+  ruca:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/69E6F5BF-1DD8-B71B-0B3BA5B283CD6A50.jpg?width=2400&height=700&mode=crop&quality=90",
+  saan:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/3B590944-1DD8-B71B-0BA14A5371AA0196.jpg?width=2400&height=700&mode=crop&quality=90",
+  sacn:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/8D4A0783-1DD8-B71B-0BE4C767C8E4051D.jpg?width=2400&height=700&mode=crop&quality=90",
+  sacr:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/2602356E-1DD8-B71B-0B0533AB23A7C7DB.jpg?width=2400&height=700&mode=crop&quality=90",
+  safe:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/F84BE970-1DD8-B71B-0B5BC6B3559A5D17.jpg?width=2400&height=700&mode=crop&quality=90",
+  safr:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/284B41CA-1DD8-B71B-0B495622C54988D4.jpg?width=2400&height=700&mode=crop&quality=90",
+  sagu:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/5D2733EE-1DD8-B71B-0B24869B10725BC0.jpg?width=2400&height=700&mode=crop&quality=90",
+  sahi:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/E8018A1C-1DD8-B71B-0BF8325588A391A1.jpg?width=2400&height=700&mode=crop&quality=90",
+  sair:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/8AE4E97E-1DD8-B71B-0BFFBB26B99E5CB3.jpg?width=2400&height=700&mode=crop&quality=90",
+  sajh:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/9B8BA7FB-1DD8-B71B-0B0874332B5BECB1.jpg?width=2400&height=700&mode=crop&quality=90",
+  saju:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/71A25583-1DD8-B71B-0B8132583C0B0912.jpg?width=2400&height=700&mode=crop&quality=90",
+  sama:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/8AAE2098-1DD8-B71B-0BF6F77410E7EBD5.jpg?width=2400&height=700&mode=crop&quality=90",
+  samo:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/500CB95C-1DD8-B71B-0BF04243046F47DB.jpg?width=2400&height=700&mode=crop&quality=90",
+  sand:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/F6896CC6-1DD8-B71B-0B8FC5B3794BD9C6.JPG?width=2400&height=700&mode=crop&quality=90",
+  sapa:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/186B4A5A-1DD8-B71B-0B36D0E2E8F9D196.jpg?width=2400&height=700&mode=crop&quality=90",
+  sapu:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/F24C8F1D-1DD8-B71B-0B45E865964AA85F.jpg?width=2400&height=700&mode=crop&quality=90",
+  sara:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/FD3FF6F7-1DD8-B71B-0B2126BB2F1EA557.jpg?width=2400&height=700&mode=crop&quality=90",
+  sari:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/C56E94AA-1DD8-B71B-0BF2D9ECD102CA77.jpg?width=2400&height=700&mode=crop&quality=90",
+  scbl:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/26DD6D55-1DD8-B71B-0B23F6DF12DD1C28.JPG?width=2400&height=700&mode=crop&quality=90",
+  seki:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/E1511E88-1DD8-B71B-0BD8E4869528C181.jpg?width=2400&height=700&mode=crop&quality=90",
+  semo:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/5D7FA4ED-1DD8-B71B-0BCCCDE07617ECFB.jpg?width=2400&height=700&mode=crop&quality=90",
+  shen:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/EC803A56-1DD8-B71B-0BD7EE282E4EAECD.jpg?width=2400&height=700&mode=crop&quality=90",
+  shil:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/6CEFB030-1DD8-B71B-0B790BD7080C316E.jpg?width=2400&height=700&mode=crop&quality=90",
+  sitk:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/917C6FB1-1DD8-B71B-0B2C7338B9D25EAF.jpg?width=2400&height=700&mode=crop&quality=90",
+  slbe:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/8BD9032B-1DD8-B71B-0B1F0979DB9F4358.jpg?width=2400&height=700&mode=crop&quality=90",
+  spar:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/54827D4E-1DD8-B71B-0B4C801C502A9560.jpg?width=2400&height=700&mode=crop&quality=90",
+  srnc:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/15E7E26B-1DD8-B71B-0BC1008BE8662F64.jpg?width=2400&height=700&mode=crop&quality=90",
+  stea:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/7D036FDC-1DD8-B71B-0BDAF476400A04C4.jpg?width=2400&height=700&mode=crop&quality=90",
+  stli:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/F1719CBE-1DD8-B71B-0B93EA7C972FAAB2.jpg?width=2400&height=700&mode=crop&quality=90",
+  ston:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/C3096F46-1DD8-B71B-0B995C851324DCAD.jpg?width=2400&height=700&mode=crop&quality=90",
+  stri:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/15E7E26B-1DD8-B71B-0BC1008BE8662F64.jpg?width=2400&height=700&mode=crop&quality=90",
+  stsp:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/8F1CE159-1DD8-B71B-0B5BAE6DE4E8DCAE.jpg?width=2400&height=700&mode=crop&quality=90",
+  sucr:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/15CEB842-1DD8-B71B-0B332EA0C27726E4.jpg?width=2400&height=700&mode=crop&quality=90",
+  suit:
+    "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/728548EB-1DD8-B71B-0BF345D4B6FAB581.jpg?width=2400&height=700&mode=crop&quality=90",
+  tapr:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/3E6AF101-1DD8-B71B-0BB028BE3988C7D5.jpg?width=2400&height=700&mode=crop&quality=90",
+  this:
+    "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/662991DD-1DD8-B71B-0BB617FCCCAE549E.jpg?width=2400&height=700&mode=crop&quality=90",
+  thko:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/F3D00FAD-1DD8-B71B-0B6EAF045BAD6B7A.jpg?width=2400&height=700&mode=crop&quality=90",
+  thrb:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/185C0F94-1DD8-B71B-0BC217328653DCAC.jpg?width=2400&height=700&mode=crop&quality=90",
+  thri:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/E1F44E63-1DD8-B71B-0BC47381231023D4.jpg?width=2400&height=700&mode=crop&quality=90",
+  thro:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/2118F52C-1DD8-B71B-0B0713EA8F3E1AEA.jpg?width=2400&height=700&mode=crop&quality=90",
+  thst:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/4F217531-1DD8-B71B-0BA17E4B47BD2CEE.JPG?width=2400&height=700&mode=crop&quality=90",
+  tica:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/D797089C-1DD8-B71B-0BC708A8BC4ADCFB.jpg?width=2400&height=700&mode=crop&quality=90",
+  tont:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/9679E202-1DD8-B71B-0BAEED6412D12227.JPG?width=2400&height=700&mode=crop&quality=90",
+  trte:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/04BF34CE-1DD8-B71B-0BC369EFB22742A2.jpg?width=2400&height=700&mode=crop&quality=90",
+  tuai:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/A04B9A9A-1DD8-B71B-0B6E70D5D0B2F4F9.jpg?width=2400&height=700&mode=crop&quality=90",
+  tuin:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/6D56F5FF-1DD8-B71B-0BC30B25D9D85A49.jpg?width=2400&height=700&mode=crop&quality=90",
+  tuma:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/926DAAED-1DD8-B71B-0B6B737BF95B9C82.JPG?width=2400&height=700&mode=crop&quality=90",
+  tupe:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/C84BC09B-1DD8-B71B-0B85BA6DF3D38047.jpg?width=2400&height=700&mode=crop&quality=90",
+  tusk:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/5D34389C-1DD8-B71B-0B7FA399B624AE01.jpg?width=2400&height=700&mode=crop&quality=90",
+  tuzi:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/6F82A3CC-1DD8-B71B-0B1BF766C3F9704D.jpg?width=2400&height=700&mode=crop&quality=90",
+  ulsg:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/C7E5DD4A-1DD8-B71B-0BB9BEAFE5080580.jpg?width=2400&height=700&mode=crop&quality=90",
+  upde:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/92458C1E-1DD8-B71B-0B65BB35B627D8FC.jpg?width=2400&height=700&mode=crop&quality=90",
+  usar:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/C60CAF16-1DD8-B71B-0B282A0CB555E896.jpg?width=2400&height=700&mode=crop&quality=90",
+  uspp:
+    "https://www.nps.gov/common/uploads/banner_image/nri/homepage/4CA74B35-1DD8-B71B-0BA96BFD341D276D.jpg?width=2400&height=700&mode=crop&quality=90",
+  vafo:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/168A3825-1DD8-B71B-0B1D1475B9C41DFC.jpg?width=2400&height=700&mode=crop&quality=90",
+  vall:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/DD9885A3-1DD8-B71B-0B06FFB398D0CE1B.jpg?width=2400&height=700&mode=crop&quality=90",
+  valr:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/C60CAF16-1DD8-B71B-0B282A0CB555E896.jpg?width=2400&height=700&mode=crop&quality=90",
+  vama:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/21FE27B7-1DD8-B71B-0B20AA2AABF1A027.jpg?width=2400&height=700&mode=crop&quality=90",
+  vick:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/5B39E3DF-1DD8-B71B-0BF47A1E3F567CBD.jpg?width=2400&height=700&mode=crop&quality=90",
+  vicr:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/03E32A14-1DD8-B71B-0B3F69E90BF26898.jpg?width=2400&height=700&mode=crop&quality=90",
+  viis:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/068CEA76-1DD8-B71B-0B68B6876F89526E.jpg?width=2400&height=700&mode=crop&quality=90",
+  vive:
+    "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/3F40723C-1DD8-B71B-0B3BA995A384380D.jpg?width=2400&height=700&mode=crop&quality=90",
+  voya:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/A2B896D3-1DD8-B71B-0B5121682556E710.jpg?width=2400&height=700&mode=crop&quality=90",
+  waba:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/3FC662E3-1DD8-B71B-0BD452CF5E197D24.jpg?width=2400&height=700&mode=crop&quality=90",
+  waca:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/13DA892D-1DD8-B71B-0B5680C18C2E397B.jpg?width=2400&height=700&mode=crop&quality=90",
+  waco:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/012E2A95-1DD8-B71B-0B70684AE381ED02.jpg?width=2400&height=700&mode=crop&quality=90",
+  wamo:
+    "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/73E3B7EA-1DD8-B71B-0BA546521BA0BCFC.jpg?width=2400&height=700&mode=crop&quality=90",
+  wapa:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/842E8B6C-1DD8-B71B-0BC15725BCD22B17.jpg?width=2400&height=700&mode=crop&quality=90",
+  waro:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/8CEE9053-1DD8-B71B-0B56C42ABE637EAE.jpg?width=2400&height=700&mode=crop&quality=90",
+  wefa:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/4925FC01-1DD8-B71B-0B9697E26EE0D256.jpg?width=2400&height=700&mode=crop&quality=90",
+  whho:
+    "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/E12B16FB-1DD8-B71B-0BB08B518DE6B0E7.JPG?width=2400&height=700&mode=crop&quality=90",
+  whis:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/84134B92-1DD8-B71B-0B6A6501B506179A.jpg?width=2400&height=700&mode=crop&quality=90",
+  whmi:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/77B7640F-1DD8-B71B-0B8F81224A0956D0.jpg?width=2400&height=700&mode=crop&quality=90",
+  whsa:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/A684244B-1DD8-B71B-0BAB582FB34397C5.jpg?width=2400&height=700&mode=crop&quality=90",
+  wica:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/CC25AAB0-1DD8-B71B-0B48DF48A0B8DE84.JPG?width=2400&height=700&mode=crop&quality=90",
+  wicl:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/FAEE9BF9-1DD8-B71B-0B4133316056EF3F.jpg?width=2400&height=700&mode=crop&quality=90",
+  wicr:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/7F0BE8E9-1DD8-B71B-0B2B7CC9C5B96F58.JPG?width=2400&height=700&mode=crop&quality=90",
+  wiho:
+    "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/666BA8E5-1DD8-B71B-0B80542F2B5B21E1.jpg?width=2400&height=700&mode=crop&quality=90",
+  wori:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/BD234249-1DD8-B71B-0B7963F7F21544CE.jpg?width=2400&height=700&mode=crop&quality=90",
+  wotr:
+    "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/E8CB7110-1DD8-B71B-0BFCAC30B7135879.JPG?width=2400&height=700&mode=crop&quality=90",
+  wrbr:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/9155FAF1-1DD8-B71B-0B800334E4EB7A7C.jpg?width=2400&height=700&mode=crop&quality=90",
+  wrst:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/F8805363-1DD8-B71B-0BE59C3D3428BD7B.jpg?width=2400&height=700&mode=crop&quality=90",
+  wupa:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/997EB876-1DD8-B71B-0B713CFD8D039519.jpg?width=2400&height=700&mode=crop&quality=90",
+  wwii:
+    "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/2E9AD57C-1DD8-B71B-0BE1DF4135B22076.jpg?width=2400&height=700&mode=crop&quality=90",
+  yell:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/80999DF5-1DD8-B71B-0B3ED294266E097A.jpg?width=2400&height=700&mode=crop&quality=90",
+  yonb:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/766EF7C8-1DD8-B71B-0B65185B397D3CB3.jpg?width=2400&height=700&mode=crop&quality=90",
+  york:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/766EF7C8-1DD8-B71B-0B65185B397D3CB3.jpg?width=2400&height=700&mode=crop&quality=90",
+  yose:
+    "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/36C683FE-1DD8-B71B-0B6B4AE9C34946B8.jpg?width=2400&height=700&mode=crop&quality=90",
+  yuch:
+    "https://www.nps.gov/common/uploads/banner_image/akr/homepage/51D2DCD1-1DD8-B71B-0B4C259EB79A283D.jpg?width=2400&height=700&mode=crop&quality=90",
+  yuho:
+    "https://www.nps.gov/common/uploads/banner_image/imr/homepage/2AFCDBD9-1DD8-B71B-0B183BDA29A6154D.JPG?width=2400&height=700&mode=crop&quality=90",
 
   zion:
     "https://www.nps.gov/common/uploads/banner_image/imr/homepage/0047D4F0-1DD8-B71B-0B56566586F793FA.jpg?width=2400&height=700&mode=crop&quality=90"
