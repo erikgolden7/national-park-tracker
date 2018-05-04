@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ParkAlerts from "./ParkAlerts";
 import axios from "axios";
 import InfoMap from "./InfoMap/InfoMap";
+import banners from "../../../banners";
 import "./parkInfo.css";
 
 export default class ParkInfo extends Component {
@@ -83,13 +84,15 @@ export default class ParkInfo extends Component {
           ""
         )}
         {alert}
-
+        {parkCode && (
+          <img
+            src={banners[parkCode]}
+            alt="Park Image"
+            className="image-responsive"
+          />
+        )}
         <div className="large-title-text"> Basic Information </div>
         <hr />
-        {
-          //parkCode &&
-          // <img style={{textAlign:"left"}} src={require(`../../assets/parks/${parkCode}.jpg`)} alt="Park Image" className="img-responsive"/>
-        }
         <div className="text">{description}</div>
         <div className="large-title-text">Weather Information:</div>
         <hr />
