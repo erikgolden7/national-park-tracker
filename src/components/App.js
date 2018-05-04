@@ -8,6 +8,7 @@ import FavoriteMap from "./Favorites/FavoriteMap/FavoriteMap";
 import ParkHistory from "./ParkHistory/ParkHistory";
 import NotFound from "./NotFound/NotFound";
 import { Switch, Route } from "react-router-dom";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import "../styles/App.css";
 
 class App extends Component {

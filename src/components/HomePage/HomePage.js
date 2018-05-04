@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router";
 import parks from "./parksData";
-
 import "./homePage.css";
 
 class HomePage extends Component {
@@ -24,7 +23,7 @@ class HomePage extends Component {
 
     const preview = parks.map((e, i) => {
       return (
-        <div className="container">
+        <div key={i} className="container">
           <div className="content">
             <a href={e.url} rel="noopener noreferrer" target="_blank">
               <div className="content-overlay" />

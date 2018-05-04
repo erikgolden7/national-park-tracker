@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import RaisedButton from "material-ui/RaisedButton";
+import TextField from "material-ui/TextField";
+import DatePicker from "material-ui/DatePicker";
 
 export default class ParkHistory extends Component {
   // componentDidMount() {
@@ -17,15 +20,20 @@ export default class ParkHistory extends Component {
       <div>
         <h1>Add Entry</h1>
         <form onSubmit={this.handleSubmit}>
-          <div>Park Name:</div>
-          <input type="text" name="name" placeholder="Enter name..." />
-          <div>Date Visited:</div>
-          <input type="date" />
-          <div>Image:</div>
-          <input type="text" name="img" />
-          <div>Notes:</div>
-          <textarea name="message" rows="10" cols="60" />
-          <button type="submit">Submit</button>
+          <TextField hintText="Hint Text" floatingLabelText="Park Name" />
+          <br />
+          <br />
+          <DatePicker hintText="Visit Date" openToYearSelection={true} />
+
+          <TextField hintText="Hint Text" floatingLabelText="Upload Image" />
+          <br />
+
+          <TextField
+            hintText="Hint Text"
+            floatingLabelText="Additional Notes..."
+          />
+          <br />
+          <RaisedButton type="submit" label="Submit" />
         </form>
       </div>
     );
