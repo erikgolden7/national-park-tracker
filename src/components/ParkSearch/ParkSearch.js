@@ -53,6 +53,8 @@ export default class ParkSearch extends Component {
   }
 
   render() {
+    console.log(this.state.parks);
+
     const { toggle, listToggle, parks, state, selectedState } = this.state;
 
     return (
