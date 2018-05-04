@@ -57,10 +57,6 @@ class Favorites extends Component {
     };
 
     const favorite = this.state.favorite.map((e, i) => {
-      const code = e.park_code;
-      console.log(code);
-      console.log(banners[code]);
-
       return (
         // <div key={i} className="fav-card">
         //   <div className="card-header">
@@ -96,7 +92,7 @@ class Favorites extends Component {
             style={{ padding: "16px 16px 6px 16px" }}
           />
           <CardMedia style={{ margin: 16, border: "solid gray 0.5px" }}>
-            <img src={banners[code]} alt="" />
+            <img src={banners[e.park_code]} alt="" />
           </CardMedia>
           <CardText style={{ padding: "0px 16px 16px 16px" }}>
             {e.description}
