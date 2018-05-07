@@ -118,12 +118,19 @@ app.get("/auth/logout", (req, res) => {
 // =========
 // ENDPOINTS
 // =========
+
+// Parks
 app.get("/api/allParks", mainCtrl.getAllParks);
 app.get("/api/parks/:id", mainCtrl.getParkByState);
 app.get("/api/alerts/:code", mainCtrl.getAlerts);
+
+// Favorites
 app.get("/api/favorite/:id", mainCtrl.getUserHistory);
 app.post("/api/addFavorite", mainCtrl.addFavorite);
 app.delete("/api/removeFavorite", mainCtrl.removeFavorite);
+
+// History
+app.post("/api/addHistory", mainCtrl.addHistory);
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);

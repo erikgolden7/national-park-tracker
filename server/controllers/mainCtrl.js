@@ -60,5 +60,17 @@ module.exports = {
       .remove_favorite([req.query.id, req.query.parkCode])
       .then(response => res.status(200).send(response))
       .catch(err => res.status(500).send(err));
+  },
+
+  addHistory: (req, res) => {
+    const db = req.app.get("db");
+    const { name, date, image, notes } = req.body;
+    console.log("====================================");
+    console.log(req.user[0].auth_id, name, date, image, notes);
+    console.log("====================================");
+    db
+      .add_history([req.user[0].auth_id, name, date, image, notes])
+      .then(response => res.status(200).send(response))
+      .catch(err => res.status(500).send(err));
   }
 };
