@@ -1,14 +1,16 @@
 import React, { Component } from "react";
+import axios from "axios";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import DatePicker from "material-ui/DatePicker";
+import Percent from "./Percent/Percent";
 
 export default class ParkHistory extends Component {
-  // componentDidMount() {
-  //   if (!this.props.isAuthed) {
-  //     window.location.href = process.env.REACT_APP_LOGIN;
-  //   }
-  // }
+  componentDidMount() {
+    if (!this.props.isAuthed) {
+      window.location.href = process.env.REACT_APP_LOGIN;
+    }
+  }
 
   handleSubmit(e) {
     e.preventdefault();
@@ -18,6 +20,7 @@ export default class ParkHistory extends Component {
   render() {
     return (
       <div>
+        <Percent user={this.props.user} />
         <h1>Add Entry</h1>
         <form onSubmit={this.handleSubmit}>
           <TextField hintText="Hint Text" floatingLabelText="Park Name" />

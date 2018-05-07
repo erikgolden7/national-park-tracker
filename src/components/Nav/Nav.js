@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import RaisedButton from "material-ui/RaisedButton";
 import "./nav.css";
 export default class Nav extends Component {
   constructor(props) {
@@ -18,6 +19,9 @@ export default class Nav extends Component {
   }
 
   render() {
+    const btnStyle = {
+      margin: "0 20px"
+    };
     return (
       <div style={{ marginBottom: 60 }}>
         <nav className="nav">
@@ -36,13 +40,7 @@ export default class Nav extends Component {
             ) : (
               ""
             )}
-            {/*{this.state.user.id ?
-              <Link to="/badges" className="nav-item link-3">
-                <div className="badge-icon"></div>
-                <div> Junior Ranger </div>
-              </Link>
-              : '' }
-            */}
+
             {this.state.user.id ? (
               <Link to="/favorites" className="nav-item link-3">
                 <div className="favorite-icon" />
@@ -63,25 +61,23 @@ export default class Nav extends Component {
 
           <div className="nav-right">
             {!this.state.user.id ? (
-              <button
-                className="login-btn"
+              <RaisedButton
+                label="Sign In"
+                style={btnStyle}
                 onClick={() =>
                   (window.location.href = process.env.REACT_APP_LOGIN)
                 }
-              >
-                Sign In
-              </button>
+              />
             ) : (
               <div style={{ display: "flex", alignItems: "center" }}>
                 Welcome {this.state.user.full_name}!
-                <button
-                  className="login-btn"
+                <RaisedButton
+                  label="Log Out"
+                  style={btnStyle}
                   onClick={() =>
                     (window.location.href = process.env.REACT_APP_LOGOUT)
                   }
-                >
-                  Sign Off
-                </button>
+                />
               </div>
             )}
           </div>

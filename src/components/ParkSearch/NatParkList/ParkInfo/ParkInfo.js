@@ -3,6 +3,7 @@ import ParkAlerts from "./ParkAlerts";
 import axios from "axios";
 import InfoMap from "./InfoMap/InfoMap";
 import banners from "../../../banners";
+import swal from "sweetalert2";
 import "./parkInfo.css";
 
 export default class ParkInfo extends Component {
@@ -37,8 +38,13 @@ export default class ParkInfo extends Component {
       });
 
       if (favDouble === true) {
-        alert("already exists");
+        swal({
+          type: "error",
+          title: "Oops...",
+          text: `${fullName} is already in your favorites!`
+        });
       } else {
+        swal("Successfully added to favorites!", "", "success");
         axios.post("api/addFavorite", {
           latLong,
           fullName,

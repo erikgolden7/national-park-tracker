@@ -118,6 +118,7 @@ app.get("/auth/logout", (req, res) => {
 // =========
 // ENDPOINTS
 // =========
+app.get("/api/allParks", mainCtrl.getAllParks);
 app.get("/api/parks/:id", mainCtrl.getParkByState);
 app.get("/api/alerts/:code", mainCtrl.getAlerts);
 app.get("/api/favorite/:id", mainCtrl.getUserHistory);

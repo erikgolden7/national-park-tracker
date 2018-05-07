@@ -9,6 +9,7 @@ import {
 } from "material-ui/Card";
 import IconButton from "material-ui/IconButton";
 import Delete from "material-ui/svg-icons/action/delete-forever";
+import swal from "sweetalert2";
 import "./favorites.css";
 import banners from "../banners";
 
@@ -32,15 +33,30 @@ class Favorites extends Component {
   }
 
   removeFavorite(parkCode) {
-    axios
-      .delete(
-        `/api/removeFavorite?id=${this.props.user.auth_id}&parkCode=${parkCode}`
-      )
-      .then(res => {
-        axios.get(`/api/favorite/${this.props.user.auth_id}`).then(res => {
-          this.setState({ favorite: res.data });
-        });
-      });
+    swal({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then(result => {
+      if (result.value) {
+        axios
+          .delete(
+            `/api/removeFavorite?id=${
+              this.props.user.auth_id
+            }&parkCode=${parkCode}`
+          )
+          .then(res => {
+            axios.get(`/api/favorite/${this.props.user.auth_id}`).then(res => {
+              this.setState({ favorite: res.data });
+            });
+          });
+        swal("Deleted!", "Successfully removed from favorites.", "success");
+      }
+    });
   }
 
   render() {
@@ -57,30 +73,10 @@ class Favorites extends Component {
 
     const favorite = this.state.favorite.map((e, i) => {
       return (
-        // <div key={i} className="fav-card">
-        //   <div className="card-header">
-        //     {e.park_name}
-        //     <div
-        //       className="delete"
-        //       onClick={() => this.removeFavorite(e.park_code)}
-        //     />
-        //   </div>
-        //   <div className="fav-info">{e.description}</div>
-        //   <div className="fav-info">Coordinates: {e.coordinates}</div>
-        //   <div className="fav-info">States: {e.states}</div>
-        //   <a
-        //     className="fav-info"
-        //     style={{ color: "black" }}
-        //     target="_blank"
-        //     href={e.url}
-        //   >
-        //     {e.url}
-        //   </a>
-        // </div>
-
         <Card
+          key={i}
           style={{
-            width: "48%",
+            width: "32.3%",
             margin: " 10px auto",
             border: "solid black 0.5px"
           }}

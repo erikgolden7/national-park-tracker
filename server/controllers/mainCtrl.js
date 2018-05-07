@@ -12,6 +12,13 @@ module.exports = {
       .catch(err => res.status(500).send(err));
   },
 
+  getAllParks: (req, res, next) => {
+    axios
+      .get(`${baseURL}parks?api_key=m38xXfA2QlSB63NwgR1JKUj9BqOz5o3bPvAqHuCK`)
+      .then(response => res.status(200).send(response.data))
+      .catch(err => res.status(500).send(err));
+  },
+
   getAlerts: (req, res, next) => {
     const { code } = req.params;
     axios
