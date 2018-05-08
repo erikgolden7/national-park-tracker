@@ -132,6 +132,7 @@ app.delete("/api/removeFavorite", mainCtrl.removeFavorite);
 // History
 app.post("/api/addHistory", mainCtrl.addHistory);
 app.get("/api/getHistory/:id", mainCtrl.getAllHistory);
+app.delete("/api/delete", mainCtrl.removeHistory);
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);

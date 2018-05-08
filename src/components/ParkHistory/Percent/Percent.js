@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Line } from "rc-progress";
 import axios from "axios";
+import "./percent.css";
 
 export default class Percent extends Component {
   constructor(props) {
@@ -33,14 +34,18 @@ export default class Percent extends Component {
   render() {
     return (
       <div>
-        <Line
-          percent={this.state.percent}
-          strokeLinecap="round"
-          strokeWidth="4"
-          strokeColor="#4B994A"
-          style={{ width: "50%", margin: 20 }}
-        />
-        <span>{this.state.percent + "%"}</span>
+        <div className="percent">
+          <Line
+            percent={this.state.percent}
+            strokeLinecap="square"
+            strokeWidth="4"
+            trailWidth="0"
+            strokeColor="#006CC0"
+            style={{ width: "50%", margin: 20, border: "solid black 3px" }}
+          />
+          <span>{this.state.percent + "%"}</span>
+        </div>
+
         <div>
           {`You have visited ${this.state.parkCount} out of ${
             this.state.totalParkCount

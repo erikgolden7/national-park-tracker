@@ -45,8 +45,20 @@ class ParkHistory extends Component {
     this.setState({ open: false });
   };
 
-  formatDate(date) {
-    return moment(date).format("LL");
+  delete(user, e) {
+    console.log(user.auth_id, e);
+    console.log(this.state.selectedPark);
+    axios
+      .delete(
+        `/api/delete?user=${this.props.user.auth_id}&id=${
+          this.state.selectedPark.id
+        }`
+      )
+      .then(res => {
+        this.setState({ history: res.data });
+        this.getHistory();
+        this.handleClose();
+      });
   }
 
   getHistory() {
@@ -59,9 +71,9 @@ class ParkHistory extends Component {
   render() {
     const history = this.state.history.map((e, i) => {
       return (
-        <TableRow key={i}>
+        <TableRow key={i} style={{ cursor: "pointer" }}>
           <TableRowColumn>{e.park_name}</TableRowColumn>
-          <TableRowColumn>{this.formatDate(e.park_date)}</TableRowColumn>
+          <TableRowColumn>{moment(e.park_date).format("LL")}</TableRowColumn>
           <TableRowColumn>{e.notes}</TableRowColumn>
         </TableRow>
       );
@@ -81,16 +93,43 @@ class ParkHistory extends Component {
             <TableRow>
               <TableHeaderColumn
                 colSpan="3"
-                tooltip="Super Header"
-                style={{ textAlign: "center" }}
+                style={{
+                  textAlign: "center",
+                  fontSize: 32,
+                  color: "gray"
+                }}
               >
                 My Park History
               </TableHeaderColumn>
             </TableRow>
             <TableRow>
-              <TableHeaderColumn>Park Name</TableHeaderColumn>
-              <TableHeaderColumn>Date of Visit</TableHeaderColumn>
-              <TableHeaderColumn>Notes</TableHeaderColumn>
+              <TableHeaderColumn
+                style={{
+                  fontSize: 18,
+                  background: "#969696",
+                  color: "white"
+                }}
+              >
+                Park Name
+              </TableHeaderColumn>
+              <TableHeaderColumn
+                style={{
+                  fontSize: 18,
+                  background: "#969696",
+                  color: "white"
+                }}
+              >
+                Date of Visit
+              </TableHeaderColumn>
+              <TableHeaderColumn
+                style={{
+                  fontSize: 18,
+                  background: "#969696",
+                  color: "white"
+                }}
+              >
+                Notes
+              </TableHeaderColumn>
             </TableRow>
           </TableHeader>
           <TableBody displayRowCheckbox={false} showRowHover={true}>
@@ -112,10 +151,16 @@ class ParkHistory extends Component {
           {this.state.selectedPark.notes}
           <br />
           <br />
-          <RaisedButton label="Submit" primary={true} />
+          <RaisedButton
+            label="Delete"
+            labelColor="#fff"
+            backgroundColor="#A52C24"
+            style={{ marginRight: 20 }}
+            onClick={e => this.delete(this.props.user, e)}
+          />
           <RaisedButton
             type="button"
-            label="Cancel"
+            label="Close"
             onClick={this.handleClose}
           />
         </Dialog>

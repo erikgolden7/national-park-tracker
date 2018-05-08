@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import swal from "sweetalert2";
 import TextField from "material-ui/TextField";
 import Dialog from "material-ui/Dialog";
 import RaisedButton from "material-ui/RaisedButton";
@@ -42,14 +41,16 @@ export default class ParkForm extends Component {
   };
 
   formWarning(type) {
-    return swal({
-      position: "top-end",
-      type: "warning",
-      title: "Oops...",
-      text: type,
-      showConfirmButton: false,
-      timer: 1500
-    });
+    return (
+      <TextField
+        hintText="Hint Text"
+        value={this.state.name}
+        onChange={this.handleChange}
+        name="name"
+        floatingLabelText="Park Name"
+        errorText="This field is required"
+      />
+    );
   }
 
   handleSubmit(e) {
@@ -79,7 +80,11 @@ export default class ParkForm extends Component {
   render() {
     return (
       <div>
-        <FloatingActionButton style={{ margin: 20 }} onClick={this.handleOpen}>
+        <FloatingActionButton
+          backgroundColor="#3CBC78"
+          style={{ margin: 20 }}
+          onClick={this.handleOpen}
+        >
           <ContentAdd />
         </FloatingActionButton>
         <Dialog
@@ -90,13 +95,6 @@ export default class ParkForm extends Component {
         >
           Open a Date Picker dialog from within a dialog.
           <form onSubmit={this.handleSubmit}>
-            <TextField
-              hintText="Hint Text"
-              value={this.state.name}
-              onChange={this.handleChange}
-              name="name"
-              floatingLabelText="Park Name"
-            />
             <br />
             <br />
             <DatePicker
@@ -124,15 +122,20 @@ export default class ParkForm extends Component {
             />
             <br />
             <br />
+            <br />
             <RaisedButton
               type="submit"
               label="Submit"
-              primary={true}
+              backgroundColor="#43A328"
+              labelColor="#fff"
+              style={{ marginRight: 20 }}
               onClick={() => this.props.add()}
             />
             <RaisedButton
               type="button"
               label="Cancel"
+              backgroundColor="#DE4640"
+              labelColor="#fff"
               onClick={this.handleClose}
             />
           </form>
