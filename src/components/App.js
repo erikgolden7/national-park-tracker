@@ -53,8 +53,8 @@ class App extends Component {
             render={props => (
               <ParkSearch
                 {...props}
-                isAuthed={this.isAuthed}
-                user={this.state.user}
+                isAuthed={user.id ? true : false}
+                user={user}
               />
             )}
           />

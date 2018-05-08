@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import swal from "sweetalert2";
 import TextField from "material-ui/TextField";
 import Dialog from "material-ui/Dialog";
-import FlatButton from "material-ui/FlatButton";
 import RaisedButton from "material-ui/RaisedButton";
 import DatePicker from "material-ui/DatePicker";
 import FloatingActionButton from "material-ui/FloatingActionButton";
@@ -46,27 +46,45 @@ export default class ParkForm extends Component {
     });
   };
 
+  formWarning(type) {
+    return swal({
+      position: "top-end",
+      type: "warning",
+      title: "Oops...",
+      text: type,
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
+
   handleSubmit(e) {
     const { name, date, image, notes } = this.state;
-    axios.post("/api/addHistory", { name, date, image, notes }).then(res => {
-      console.log(res);
-    });
+
+    if (!name && !date) {
+      this.formWarning("Must enter a name and date!");
+    } else if (!name) {
+      this.formWarning("Must enter a park name!");
+    } else if (!date) {
+      this.formWarning("Must enter a date!");
+    } else {
+      axios.post("/api/addHistory", { name, date, image, notes }).then(res => {
+        console.log(res);
+      });
+      this.setState({
+        open: false,
+        name: "",
+        date: null,
+        image: "",
+        notes: ""
+      });
+    }
     e.preventDefault();
   }
 
   render() {
-    // const actions = [
-    //   <FlatButton
-    //     label="Ok"
-    //     primary={true}
-    //     keyboardFocused={true}
-    //     onClick={this.handleClose}
-    //   />
-    // ];
-
     return (
       <div>
-        <FloatingActionButton onClick={this.handleOpen}>
+        <FloatingActionButton style={{ margin: 20 }} onClick={this.handleOpen}>
           <ContentAdd />
         </FloatingActionButton>
         <Dialog
@@ -115,7 +133,11 @@ export default class ParkForm extends Component {
               type="submit"
               label="Submit"
               primary={true}
-              // keyboardFocused={true}
+              onClick={() => this.props.add()}
+            />
+            <RaisedButton
+              type="button"
+              label="Cancel"
               onClick={this.handleClose}
             />
           </form>

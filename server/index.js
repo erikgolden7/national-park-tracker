@@ -125,12 +125,13 @@ app.get("/api/parks/:id", mainCtrl.getParkByState);
 app.get("/api/alerts/:code", mainCtrl.getAlerts);
 
 // Favorites
-app.get("/api/favorite/:id", mainCtrl.getUserHistory);
+app.get("/api/favorite/:id", mainCtrl.getUserFavorites);
 app.post("/api/addFavorite", mainCtrl.addFavorite);
 app.delete("/api/removeFavorite", mainCtrl.removeFavorite);
 
 // History
 app.post("/api/addHistory", mainCtrl.addHistory);
+app.get("/api/getHistory/:id", mainCtrl.getAllHistory);
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);

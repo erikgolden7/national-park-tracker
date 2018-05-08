@@ -42,7 +42,7 @@ export default class Percent extends Component {
         />
         <span>{this.state.percent + "%"}</span>
         <div>
-          {`You have been to ${this.state.parkCount} out of ${
+          {`You have visited ${this.state.parkCount} out of ${
             this.state.totalParkCount
           } National Parks!`}
         </div>
