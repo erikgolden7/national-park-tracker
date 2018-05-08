@@ -8,9 +8,6 @@ import DatePicker from "material-ui/DatePicker";
 import FloatingActionButton from "material-ui/FloatingActionButton";
 import ContentAdd from "material-ui/svg-icons/content/add";
 
-/**
- * Dialogs can be nested. This example opens a Date Picker from within a Dialog.
- */
 export default class ParkForm extends Component {
   constructor(props) {
     super(props);
@@ -41,9 +38,7 @@ export default class ParkForm extends Component {
   }
 
   handleDateChange = (e, date) => {
-    this.setState({
-      date: date
-    });
+    this.setState({ date });
   };
 
   formWarning(type) {
