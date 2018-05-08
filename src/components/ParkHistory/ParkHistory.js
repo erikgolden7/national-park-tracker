@@ -82,7 +82,7 @@ class ParkHistory extends Component {
     return (
       <div>
         <Percent user={this.props.user} />
-        <ParkForm add={this.getHistory} />
+        <ParkForm add={this.getHistory} get={this.getHistory} />
         <Table
           fixedHeader={true}
           height={"60vh"}

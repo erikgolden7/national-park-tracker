@@ -16,7 +16,9 @@ export default class ParkForm extends Component {
       date: null,
       image: "",
       notes: "",
-      open: false
+      open: false,
+      nameToggle: false,
+      dateToggle: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -40,31 +42,18 @@ export default class ParkForm extends Component {
     this.setState({ date });
   };
 
-  formWarning(type) {
-    return (
-      <TextField
-        hintText="Hint Text"
-        value={this.state.name}
-        onChange={this.handleChange}
-        name="name"
-        floatingLabelText="Park Name"
-        errorText="This field is required"
-      />
-    );
-  }
-
   handleSubmit(e) {
     const { name, date, image, notes } = this.state;
-
+    this.setState({ nameToggle: false, dateToggle: false });
     if (!name && !date) {
-      this.formWarning("Must enter a name and date!");
+      this.setState({ nameToggle: true, dateToggle: true });
     } else if (!name) {
-      this.formWarning("Must enter a park name!");
+      this.setState({ nameToggle: true });
     } else if (!date) {
-      this.formWarning("Must enter a date!");
+      this.setState({ dateToggle: true });
     } else {
       axios.post("/api/addHistory", { name, date, image, notes }).then(res => {
-        console.log(res);
+        this.props.get();
       });
       this.setState({
         open: false,
@@ -75,6 +64,50 @@ export default class ParkForm extends Component {
       });
     }
     e.preventDefault();
+  }
+
+  nameValidation() {
+    if (this.state.nameToggle) {
+      return (
+        <TextField
+          value={this.state.name}
+          onChange={this.handleChange}
+          name="name"
+          floatingLabelText="Park Name"
+          errorText="This field is required"
+        />
+      );
+    }
+    return (
+      <TextField
+        value={this.state.name}
+        onChange={this.handleChange}
+        name="name"
+        floatingLabelText="Park Name"
+      />
+    );
+  }
+
+  dateValidation() {
+    if (this.state.dateToggle) {
+      return (
+        <DatePicker
+          hintText="Visit Date"
+          value={this.state.date}
+          onChange={this.handleDateChange}
+          name="date"
+          errorText="This field is required"
+        />
+      );
+    }
+    return (
+      <DatePicker
+        hintText="Visit Date"
+        value={this.state.date}
+        onChange={this.handleDateChange}
+        name="date"
+      />
+    );
   }
 
   render() {
@@ -95,14 +128,10 @@ export default class ParkForm extends Component {
         >
           Open a Date Picker dialog from within a dialog.
           <form onSubmit={this.handleSubmit}>
+            {this.nameValidation()}
             <br />
             <br />
-            <DatePicker
-              hintText="Visit Date"
-              value={this.state.date}
-              onChange={this.handleDateChange}
-              name="date"
-            />
+            {this.dateValidation()}
 
             <TextField
               hintText="Hint Text"
