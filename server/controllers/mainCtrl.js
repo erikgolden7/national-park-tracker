@@ -1,12 +1,12 @@
-const axios = require("axios");
-const baseURL = "https://developer.nps.gov/api/v1/";
+const axios = require('axios');
+const baseURL = 'https://developer.nps.gov/api/v1/';
 
 module.exports = {
   getParkByState: (req, res, next) => {
     const { id } = req.params;
     axios
       .get(
-        `${baseURL}parks?stateCode=${id}&api_key=m38xXfA2QlSB63NwgR1JKUj9BqOz5o3bPvAqHuCK`
+        `${baseURL}parks?stateCode=${id}&api_key=Af0yvEHgRkHfkbmajJCWSbIDsGtLegczcxbYhByL`
       )
       .then(response => res.status(200).send(response.data))
       .catch(err => res.status(500).send(err));
@@ -14,7 +14,7 @@ module.exports = {
 
   getAllParks: (req, res, next) => {
     axios
-      .get(`${baseURL}parks?api_key=m38xXfA2QlSB63NwgR1JKUj9BqOz5o3bPvAqHuCK`)
+      .get(`${baseURL}parks?api_key=Af0yvEHgRkHfkbmajJCWSbIDsGtLegczcxbYhByL`)
       .then(response => res.status(200).send(response.data))
       .catch(err => res.status(500).send(err));
   },
@@ -23,14 +23,14 @@ module.exports = {
     const { code } = req.params;
     axios
       .get(
-        `${baseURL}alerts?parkCode=${code}&api_key=m38xXfA2QlSB63NwgR1JKUj9BqOz5o3bPvAqHuCK`
+        `${baseURL}alerts?parkCode=${code}&api_key=Af0yvEHgRkHfkbmajJCWSbIDsGtLegczcxbYhByL`
       )
       .then(response => res.status(200).send(response.data))
       .catch(err => res.status(500).send(err));
   },
 
   getUserFavorites: (req, res, next) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     db.favorites
       .get_favorites([req.params.id])
       .then(response => res.status(200).send(response))
@@ -39,7 +39,7 @@ module.exports = {
 
   addFavorite: (req, res) => {
     const { fullName, latLong, parkCode, url, description, states } = req.body;
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     db.favorites
       .add_favorite([
         req.user[0].auth_id,
@@ -55,7 +55,7 @@ module.exports = {
   },
 
   removeFavorite: (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     db.favorites
       .remove_favorite([req.query.id, req.query.parkCode])
       .then(response => res.status(200).send(response))
@@ -63,7 +63,7 @@ module.exports = {
   },
 
   addHistory: (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     const { name, date, image, notes } = req.body;
     db.history
       .add_history([req.user[0].auth_id, name, date, image, notes])
@@ -72,7 +72,7 @@ module.exports = {
   },
 
   getAllHistory: (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     db.history
       .get_all_history([req.params.id])
       .then(response => res.status(200).send(response))
@@ -80,7 +80,7 @@ module.exports = {
   },
 
   removeHistory: (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     db.history
       .remove_history([req.query.user, req.query.id])
       .then(response => res.status(200).send(response))

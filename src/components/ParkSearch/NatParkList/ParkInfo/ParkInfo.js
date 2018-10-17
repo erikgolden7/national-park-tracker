@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import ParkAlerts from "./ParkAlerts";
-import axios from "axios";
-import InfoMap from "./InfoMap/InfoMap";
-import banners from "../../../banners";
-import swal from "sweetalert2";
-import "./parkInfo.css";
+import React, { Component } from 'react';
+import ParkAlerts from './ParkAlerts';
+import axios from 'axios';
+import InfoMap from './InfoMap/InfoMap';
+import banners from '../../../banners';
+import swal from 'sweetalert2';
+import './parkInfo.css';
 
 export default class ParkInfo extends Component {
   constructor(props) {
@@ -39,13 +39,13 @@ export default class ParkInfo extends Component {
 
       if (favDouble === true) {
         swal({
-          type: "error",
-          title: "Oops...",
+          type: 'error',
+          title: 'Oops...',
           text: `${fullName} is already in your favorites!`
         });
       } else {
-        swal("Successfully added to favorites!", "", "success");
-        axios.post("api/addFavorite", {
+        swal('Successfully added to favorites!', '', 'success');
+        axios.post('api/addFavorite', {
           latLong,
           fullName,
           parkCode,
@@ -79,24 +79,14 @@ export default class ParkInfo extends Component {
     return (
       <div className="desc-body">
         {this.state.alerts.length === 1 ? (
-          <div className="alert">
-            {this.state.alerts.length} ALERT IN EFFECT
-          </div>
+          <div className="alert">{this.state.alerts.length} ALERT IN EFFECT</div>
         ) : this.state.alerts.length > 1 ? (
-          <div className="alert">
-            {this.state.alerts.length} ALERTS IN EFFECT
-          </div>
+          <div className="alert">{this.state.alerts.length} ALERTS IN EFFECT</div>
         ) : (
-          ""
+          ''
         )}
         {alert}
-        {parkCode && (
-          <img
-            src={banners[parkCode]}
-            alt="Park"
-            className="image-responsive"
-          />
-        )}
+        {parkCode && <img src={banners[parkCode]} alt="Park" className="image-responsive" />}
         <div className="large-title-text"> Basic Information </div>
         <hr />
         <div className="text">{description}</div>
@@ -106,64 +96,50 @@ export default class ParkInfo extends Component {
         <div className="large-title-text"> Additional Information: </div>
         <hr />
         <div className="text">
-          <span style={{ fontWeight: "bold" }}>States: </span>
+          <span style={{ fontWeight: 'bold' }}>States: </span>
           {states}
         </div>
         <div className="text">
-          <span style={{ fontWeight: "bold" }}> {name} Website: </span>
-          <a style={{ color: "darkBlue" }} target="_blank" href={url}>
+          <span style={{ fontWeight: 'bold' }}> {name} Website: </span>
+          <a style={{ color: 'darkBlue' }} target="_blank" href={url}>
             {url}
           </a>
         </div>
         <div className="text">
-          <span style={{ fontWeight: "bold" }}> Park Code: </span>
+          <span style={{ fontWeight: 'bold' }}> Park Code: </span>
           {parkCode}
         </div>
         {this.props.state.latLong ? (
           <div className="text">
-            <span style={{ fontWeight: "bold" }}> Coordinates: </span> {latLong}
+            <span style={{ fontWeight: 'bold' }}> Coordinates: </span> {latLong}
           </div>
         ) : (
-          ""
+          ''
         )}
         {this.props.state.directionsInfo ? (
           <div className="text">
-            <span style={{ fontWeight: "bold" }}> Directions: </span>{" "}
-            {directionsInfo}
+            <span style={{ fontWeight: 'bold' }}> Directions: </span> {directionsInfo}
           </div>
         ) : (
-          ""
+          ''
         )}
         {this.props.user.auth_id ? (
           <div class="icon">
             <div
               class="fontawesome-heart button"
-              onClick={() =>
-                this.visitPark(
-                  latLong,
-                  fullName,
-                  parkCode,
-                  url,
-                  description,
-                  states
-                )
-              }
+              onClick={() => this.visitPark(latLong, fullName, parkCode, url, description, states)}
             />
           </div>
         ) : (
-          ""
+          ''
         )}
         <button className="back-btn" onClick={this.props.select}>
-          {" "}
-          ⬅ Back{" "}
+          ⬅ Back
         </button>
         {this.props.state.latLong ? (
-          <InfoMap
-            state={this.props.state}
-            style={{ width: "75%", height: "auto", marginTop: "50px" }}
-          />
+          <InfoMap state={this.props.state} style={{ width: '75%', height: 'auto', marginTop: '50px' }} />
         ) : (
-          ""
+          ''
         )}
       </div>
     );

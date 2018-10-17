@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import NatParkList from "./NatParkList/NatParkList";
-import UsMap from "./UsMap/UsMap";
-import "./parkSearch.css";
+import React, { Component } from 'react';
+import NatParkList from './NatParkList/NatParkList';
+import UsMap from './UsMap/UsMap';
+import './parkSearch.css';
 
 export default class ParkSearch extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ export default class ParkSearch extends Component {
       toggle: false,
       listToggle: true,
       state: {},
-      selectedState: ""
+      selectedState: ''
     };
 
     this.stateParks = this.stateParks.bind(this);
@@ -41,6 +41,8 @@ export default class ParkSearch extends Component {
   }
 
   selectPark(state) {
+    console.log(state);
+
     this.setState({ state });
   }
 

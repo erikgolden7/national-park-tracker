@@ -649,9 +649,10 @@ const banners = {
     "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/25FAA5B5-1DD8-B71B-0B96C6CD4CEB4517.jpg?width=2400&height=700&mode=crop&quality=90",
   ocmu:
     "https://www.nps.gov/common/uploads/banner_image/akr/homepage/E37EB1D6-1DD8-B71B-0BAE32747E9E754D.jpg?width=2400&height=700&mode=crop&quality=90",
+  oire:
+    "https://www.nps.gov/common/uploads/banner_image/ner/homepage/3DF81BA7-1DD8-B71B-0B4B6A2C79C18EE4.jpg?width=2400&height=700&mode=crop&quality=90",
   okci:
     "https://www.nps.gov/common/uploads/banner_image/imr/homepage/C8E3BBAF-1DD8-B71B-0B7CEC85ADE1265E.jpg?width=2400&height=700&mode=crop&quality=90",
-
   olsp:
     "https://www.nps.gov/common/uploads/banner_image/imr/homepage/FCDBAFF8-1DD8-B71B-0BB36E88D4042615.jpg?width=2400&height=700&mode=crop&quality=90",
   olst:

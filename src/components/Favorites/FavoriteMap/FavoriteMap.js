@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Map, Marker, GoogleApiWrapper, InfoWindow } from "google-maps-react";
 import axios from "axios";
-require("dotenv").config();
 
 const LoadingContainer = props => <div>Loading...</div>;
 class GoogleMap extends Component {
